@@ -3,8 +3,8 @@
 		"authors": [ "Kly", "铁桶" ]
 	},
 	"CollapsibleSidebar-desc": "MediaWiki使用者介面的可切換暗色模式",
-	"CollapsibleSidebar-link": "暗色模式",
-	"CollapsibleSidebar-link-tooltip": "開啟暗色模式",
-	"CollapsibleSidebar-default-link": "預設模式",
-	"CollapsibleSidebar-default-link-tooltip": "關閉暗色模式"
+	"collapsiblesidebar-collapse-link": "暗色模式",
+	"collapsiblesidebar-collapse-link-tooltip": "開啟暗色模式",
+	"collapsiblesidebar-expand-link": "預設模式",
+	"collapsiblesidebar-expand-link-tooltip": "關閉暗色模式"
 }

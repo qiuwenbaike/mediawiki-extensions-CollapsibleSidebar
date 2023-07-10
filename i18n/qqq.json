@@ -3,8 +3,8 @@
 		"authors": [ "MusikAnimal", "Umherirrender", "WaitSpring" ]
 	},
 	"collapsiblesidebar-desc": "{{desc|name=CollapsibleSidebar|url=https://git.qiuwen.wiki/Fork/mediawiki-extensions-CollapsibleSidebar}}",
-	"collapsiblesidebar-link": "The link to turn on dark mode.",
-	"collapsiblesidebar-link-tooltip": "Tooltip for the link to turn on dark mode.",
-	"collapsiblesidebar-default-link": "The link to disable dark mode.",
-	"collapsiblesidebar-default-link-tooltip": "Tooltip for the link to disable dark mode."
+	"collapsiblesidebar-collapse-link": "The link to turn on dark mode.",
+	"collapsiblesidebar-collapse-link-tooltip": "Tooltip for the link to turn on dark mode.",
+	"collapsiblesidebar-expand-link": "The link to disable dark mode.",
+	"collapsiblesidebar-expand-link-tooltip": "Tooltip for the link to disable dark mode."
 }

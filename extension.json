@@ -29,10 +29,10 @@
 			"es6": true,
 			"packageFiles": [ "ext.CollapsibleSidebar.js" ],
 			"messages": [
-				"collapsiblesidebar-link",
-				"collapsiblesidebar-link-tooltip",
-				"collapsiblesidebar-default-link",
-				"collapsiblesidebar-default-link-tooltip"
+				"collapsiblesidebar-collapse-link",
+				"collapsiblesidebar-collapse-link-tooltip",
+				"collapsiblesidebar-expand-link",
+				"collapsiblesidebar-expand-link-tooltip"
 			]
 		},
 		"ext.CollapsibleSidebar.css": {
