@@ -5,19 +5,7 @@
  * - WaitSpring
  */
 
-@media screen {
-	#sidebarButton {
-		position: fixed;
-		right: 8px;
-		width: 32px;
-		height: 32px;
-		cursor: pointer;
-		-ms-user-select: none;
-		-moz-user-select: none;
-		-webkit-user-select: none;
-		user-select: none;
-	}
-}
+/* General code */
 
 @media print {
 	#sidebarButton {
@@ -25,11 +13,52 @@
 	}
 }
 
+/* Code for Vector Legacy */
+.skin-vector #sliderCollapseLogo {
+	position: absolute;
+	top: 3em;
+	width: 7em;
+	cursor: pointer;
+}
+
+@media screen {
+	.skin-vector {
+		#sidebarButton {
+			position: fixed;
+			right: 8px;
+			width: 32px;
+			height: 32px;
+			cursor: pointer;
+			-ms-user-select: none;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			user-select: none;
+		}
+
+		#sidebarCollapse {
+			position: fixed;
+			top: 5.625em;
+			width: 0.8em;
+			padding: 0.3em;
+			border: 1px solid #a7d7f9;
+			border-radius: 50px;
+			background: #fff;
+			cursor: pointer;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			user-select: none;
+		}
+	}
+}
+
+/* Code for Gongbi and Timeless */
+
 @media screen and ( min-width: 768px ) {
 	.skin-gongbi,
 	.skin-timeless {
 		&.client-collapsedsidebar {
-			#mw-related-navigation,
+			#mw-related-navigation;
+
 			#mw-site-navigation {
 				display: none;
 			}
