@@ -1,0 +1,44 @@
+/* stylelint-disable function-url-quotes */
+/* Collapsible Sidebar
+ * Authors:
+ * - AnYiEE
+ * - WaitSpring
+ */
+
+@media screen {
+	#hideSidebarButton,
+	#showSidebarButton {
+		position: fixed;
+		right: 8px;
+		width: 32px;
+		height: 32px;
+		cursor: pointer;
+		-ms-user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		user-select: none;
+	}
+}
+
+@media screen and ( min-width: 768px ) {
+	.skin-gongbi .collapsed-sidebar {
+		border-left: 0 !important;
+		margin-left: 0 !important;
+	}
+}
+
+@media screen and ( max-width: 768px ) {
+	.skin-gongbi {
+		#hideSidebarButton,
+		#showSidebarButton {
+			display: none !important;
+		}
+	}
+}
+
+@media print {
+	#hideSidebarButton,
+	#showSidebarButton {
+		display: none !important;
+	}
+}
