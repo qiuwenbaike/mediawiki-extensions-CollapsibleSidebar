@@ -6,7 +6,7 @@
  */
 'use strict';
 ( () => {
-	if ( ![ 'vector', 'vector-2022', 'gongbi', 'timeless', 'write' ].includes( mw.config.get( 'skin' ) ) ) {
+	if ( ![ 'gongbi', 'timeless', 'write' ].includes( mw.config.get( 'skin' ) ) ) {
 		return;
 	}
 	const getCookie = ( name ) => ( '; '
@@ -77,7 +77,7 @@
 			setCookie( cookieName, '1', 1e9 );
 			sidebarButton.src = images.showSidebarButtonIcon;
 			sidebarButton.alt = mw.message( 'collapsiblesidebar-show-link' );
-			sidebarButton.title = mw.message( 'collapsiblesidebar-show-link' );
+			sidebarButton.title = mw.message( 'collapsiblesidebar-show-link-tooltip' );
 			if ( mw.config.get( 'skin' ) === 'write' ) {
 				document.getElementById( 'content' ).parentElement.classList.add( 'col-md-12' );
 				document.getElementById( 'content' ).parentElement.classList.remove( 'col-md-9' );
