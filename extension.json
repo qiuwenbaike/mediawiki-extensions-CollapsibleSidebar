@@ -31,8 +31,8 @@
 			"messages": [
 				"collapsiblesidebar-collapse-link",
 				"collapsiblesidebar-collapse-link-tooltip",
-				"collapsiblesidebar-expand-link",
-				"collapsiblesidebar-expand-link-tooltip"
+				"collapsiblesidebar-show-link",
+				"collapsiblesidebar-show-link-tooltip"
 			]
 		},
 		"ext.CollapsibleSidebar.css": {

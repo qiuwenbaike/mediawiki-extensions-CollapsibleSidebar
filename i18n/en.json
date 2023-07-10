@@ -5,6 +5,6 @@
 	"collapsiblesidebar-desc": "Collapsible sidebar for MediaWiki UI",
 	"collapsiblesidebar-collapse-link": "Hide sidebars",
 	"collapsiblesidebar-collapse-link-tooltip": "Hide sidebars",
-	"collapsiblesidebar-expand-link": "Show sidebars",
-	"collapsiblesidebar-expand-link-tooltip": "Show sidebars"
+	"collapsiblesidebar-show-link": "Show sidebars",
+	"collapsiblesidebar-show-link-tooltip": "Show sidebars"
 }
