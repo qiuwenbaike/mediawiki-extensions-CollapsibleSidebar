@@ -20,7 +20,7 @@ class Hooks implements
     {
         $out->addModules('ext.CollapsibleSidebar.js');
         $out->addModuleStyles('ext.CollapsibleSidebar.css');
-        if ($this->isCollapsibleSidebarActive()) {
+        if ($this->isSidebarCollapsed()) {
             $out->addHtmlClasses('client-collapsedsidebar');
         } else {
             $out->addHtmlClasses('client-shownsidebar');
@@ -28,11 +28,11 @@ class Hooks implements
     }
 
     /**
-     * Is the Dark Mode active?
+     * Is the sidebar collapsed?
      *
      * @return bool
      */
-    private function isCollapsibleSidebarActive(): bool
+    private function isSidebarCollapsed(): bool
     {
         $var = !isset($_GET['usecollapsedsidebar']) ? '' : $_GET['usecollapsedsidebar'];
         if ($var === '0' || $var === '1') {
