@@ -1,47 +1,47 @@
 {
-	"name": "DarkMode",
+	"name": "CollapsibleSidebar",
 	"version": "0.4.0",
 	"author": [ "MusikAnimal", "R4356th", "AnYi", "WaitSpring" ],
-	"url": "https://git.qiuwen.wiki/Fork/mediawiki-extensions-DarkMode",
-	"descriptionmsg": "darkmode-desc",
+	"url": "https://git.qiuwen.wiki/Fork/mediawiki-extensions-CollapsibleSidebar",
+	"descriptionmsg": "collapsiblesidebar-desc",
 	"license-name": "GPL-3.0",
 	"type": "other",
 	"requires": {
 		"MediaWiki": ">= 1.39.0"
 	},
 	"AutoloadNamespaces": {
-		"MediaWiki\\Extension\\DarkMode\\": "includes/"
+		"MediaWiki\\Extension\\CollapsibleSidebar\\": "includes/"
 	},
 	"Hooks": {
 		"BeforePageDisplay": "main"
 	},
 	"HookHandlers": {
 		"main": {
-			"class": "MediaWiki\\Extension\\DarkMode\\Hooks",
+			"class": "MediaWiki\\Extension\\CollapsibleSidebar\\Hooks",
 			"services": [ "MainConfig" ]
 		}
 	},
 	"MessagesDirs": {
-		"DarkMode": [ "i18n" ]
+		"CollapsibleSidebar": [ "i18n" ]
 	},
 	"ResourceModules": {
-		"ext.DarkMode.js": {
+		"ext.CollapsibleSidebar.js": {
 			"es6": true,
-			"packageFiles": [ "ext.DarkMode.js" ],
+			"packageFiles": [ "ext.CollapsibleSidebar.js" ],
 			"messages": [
-				"darkmode-link",
-				"darkmode-link-tooltip",
-				"darkmode-default-link",
-				"darkmode-default-link-tooltip"
+				"collapsiblesidebar-link",
+				"collapsiblesidebar-link-tooltip",
+				"collapsiblesidebar-default-link",
+				"collapsiblesidebar-default-link-tooltip"
 			]
 		},
-		"ext.DarkMode.css": {
-			"styles": [ "ext.DarkMode.less" ]
+		"ext.CollapsibleSidebar.css": {
+			"styles": [ "ext.CollapsibleSidebar.less" ]
 		}
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "resources",
-		"remoteExtPath": "DarkMode/resources"
+		"remoteExtPath": "CollapsibleSidebar/resources"
 	},
 	"manifest_version": 2
 }

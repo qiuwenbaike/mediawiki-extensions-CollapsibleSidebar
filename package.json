@@ -1,5 +1,5 @@
 {
-	"name": "darkmode",
+	"name": "collapsiblesidebar",
 	"private": true,
 	"scripts": {
 		"test": "grunt test",
