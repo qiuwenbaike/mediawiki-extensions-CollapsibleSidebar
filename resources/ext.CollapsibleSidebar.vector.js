@@ -7,11 +7,6 @@
 		prev: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%232196f3' d='M30.9 43l3.1-3.1L18.1 24 34 8.1 30.9 5 12 24z'/%3E%3C/svg%3E"
 	};
 	const isMobile = /android|ipad|iphone|mobile/i.test( navigator.userAgent );
-	const $body = $( 'body' );
-	const $content = $( '#content' );
-	const $footer = $( '#footer' );
-	const $leftNavigation = $( '#left-navigation' );
-	const $mwNavigation = $( '#mw-navigation' );
 	const $mwWikiLogo = $( '.mw-wiki-logo' );
 	const $mwPanel = $( '#mw-panel' );
 	let isSidebarHide = false;
@@ -31,7 +26,7 @@
 	const updatePosition = () => {
 		const innerWidth = window.innerWidth;
 		const outerWidth = window.outerWidth;
-		const $bodyWidth = $body.width();
+		const $bodyWidth = document.body.offsetWidth;
 		const bodyWidth = ( isMobile ?
 			( outerWidth > 0 ? outerWidth : $bodyWidth ) :
 			innerWidth > 0 ? innerWidth : $bodyWidth
@@ -54,9 +49,9 @@
 		isSidebarHide = true;
 		$items.$sidebarCollapseButton.attr( 'src', images.next );
 		updatePosition();
-		$content.css( 'margin-left', '1em' );
-		$footer.css( 'margin-left', '1em' );
-		$leftNavigation.css( 'margin-left', '10em' );
+		document.getElementById( 'content' ).style.marginLeft = '1em';
+		document.getElementById( 'footer' ).style.marginLeft = '1em';
+		document.getElementById( 'left-navigation' ).style.marginLeft = '10em';
 		$mwPanel.hide();
 		$items.$sliderCollapseLogo.show();
 		mw.storage.set( GADGET_NAME, 'hide' );
@@ -65,9 +60,9 @@
 		isSidebarHide = false;
 		$items.$sidebarCollapseButton.attr( 'src', images.prev );
 		updatePosition();
-		$content.css( 'margin-left', '' );
-		$footer.css( 'margin-left', '' );
-		$leftNavigation.css( 'margin-left', '' );
+		document.getElementById( 'content' ).style.marginLeft = '';
+		document.getElementById( 'footer' ).style.marginLeft = '';
+		document.getElementById( 'left-navigation' ).style.marginLeft = '';
 		$mwPanel.show();
 		$items.$sliderCollapseLogo.hide();
 		mw.storage.set( GADGET_NAME, 'show' );
@@ -82,7 +77,7 @@
 				title: mw.message( 'collapsiblesidebar-collapse-link-tooltip' ),
 				draggable: false
 			} );
-		$sidebarCollapseButton.appendTo( $mwNavigation );
+		$sidebarCollapseButton.appendTo( $( '#mw-navigation' ) );
 		const $originMwLogo = $mwWikiLogo;
 		const $newMwLogo = $originMwLogo
 			.clone( false )
@@ -102,7 +97,7 @@
 			} )
 			.css( 'display', 'none' );
 		$sliderCollapseLogo.appendTo( $newMwLogo );
-		$newMwLogo.appendTo( $mwNavigation );
+		$newMwLogo.appendTo( $( '#mw-navigation' ) );
 		$items = { $sidebarCollapseButton, $sliderCollapseLogo };
 		if ( mw.storage.get( GADGET_NAME ) === 'hide' ) {
 			hideSidebar();
@@ -127,7 +122,7 @@
 		if ( !mw.config.get( 'skin' ) === 'vector' ) {
 			return;
 		}
-		if ( !$mwNavigation.length ) {
+		if ( !document.getElementById( 'mw-navigation' ) ) {
 			const observer = new MutationObserver( ( mutations ) => {
 				for ( const mutation of mutations ) {
 					for ( const node of mutation.addedNodes ) {
