@@ -1,10 +1,10 @@
 {
 	"@metadata": {
-		"authors": [ "TsuyaMarisa", "铁桶", "WaitSpring" ]
+		"authors": [ "WaitSpring" ]
 	},
-	"CollapsibleSidebar-desc": "MediaWiki用户界面的可切换暗色模式",
-	"collapsiblesidebar-collapse-link": "暗色模式",
-	"collapsiblesidebar-collapse-link-tooltip": "开启暗色模式",
-	"collapsiblesidebar-expand-link": "默认模式",
-	"collapsiblesidebar-expand-link-tooltip": "关闭暗色模式"
+	"CollapsibleSidebar-desc": "MediaWiki用户界面的可切换侧边栏",
+	"collapsiblesidebar-collapse-link": "隐藏侧边栏",
+	"collapsiblesidebar-collapse-link-tooltip": "隐藏侧边栏",
+	"collapsiblesidebar-expand-link": "显示侧边栏",
+	"collapsiblesidebar-expand-link-tooltip": "显示侧边栏"
 }

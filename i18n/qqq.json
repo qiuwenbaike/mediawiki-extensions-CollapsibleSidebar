@@ -1,10 +1,10 @@
 {
 	"@metadata": {
-		"authors": [ "MusikAnimal", "Umherirrender", "WaitSpring" ]
+		"authors": [ "WaitSpring" ]
 	},
 	"collapsiblesidebar-desc": "{{desc|name=CollapsibleSidebar|url=https://git.qiuwen.wiki/Fork/mediawiki-extensions-CollapsibleSidebar}}",
-	"collapsiblesidebar-collapse-link": "The link to turn on dark mode.",
-	"collapsiblesidebar-collapse-link-tooltip": "Tooltip for the link to turn on dark mode.",
-	"collapsiblesidebar-expand-link": "The link to disable dark mode.",
-	"collapsiblesidebar-expand-link-tooltip": "Tooltip for the link to disable dark mode."
+	"collapsiblesidebar-collapse-link": "The link to collapse sidebar (hide sidebars).",
+	"collapsiblesidebar-collapse-link-tooltip": "Tooltip for the link to collapse sidebar (hide sidebars).",
+	"collapsiblesidebar-expand-link": "The link to expand sidebar (show sidebars).",
+	"collapsiblesidebar-expand-link-tooltip": "Tooltip for the link to expand sidebar (show sidebars)."
 }
