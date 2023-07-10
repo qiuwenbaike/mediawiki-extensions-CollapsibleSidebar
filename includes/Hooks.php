@@ -1,6 +1,6 @@
 <?php
 
-namespace MediaWiki\Extension\DarkMode;
+namespace MediaWiki\Extension\CollapsibleSidebar;
 
 use IContextSource;
 use MediaWiki\Hook\BeforePageDisplayHook;
@@ -19,15 +19,15 @@ class Hooks implements
      */
     public function onBeforePageDisplay($out, $skin): void
     {
-        $out->addModules('ext.DarkMode.js');
-        $out->addModuleStyles('ext.DarkMode.css');
+        $out->addModules('ext.CollapsibleSidebar.js');
+        $out->addModuleStyles('ext.CollapsibleSidebar.css');
 
-        if ($this->isDarkModeActive($skin)) {
+        if ($this->isCollapsibleSidebarActive($skin)) {
             // The class must be on the <html> element because the CSS filter creates a new stacking context.
             // If we use the <body> instead (OutputPage::addBodyClasses), any fixed-positioned content
             // will be hidden in accordance with the w3c spec: https://www.w3.org/TR/filter-effects-1/#FilterProperty
             // Fixed elements may still be hidden in Firefox due to https://bugzilla.mozilla.org/show_bug.cgi?id=1650522
-            $out->addHtmlClasses('client-darkmode');
+            $out->addHtmlClasses('client-CollapsibleSidebar');
             $out->addMeta('color-scheme', 'dark');
         } else {
             $out->addHtmlClasses('client-lightmode');
@@ -41,16 +41,16 @@ class Hooks implements
      * @param IContextSource $context
      * @return bool
      */
-    private function isDarkModeActive(IContextSource $context): bool
+    private function isCollapsibleSidebarActive(IContextSource $context): bool
     {
-        $var = !isset($_GET['usedarkmode']) ? '' : $_GET['usedarkmode'];
+        $var = !isset($_GET['usecollapsiblesidebar']) ? '' : $_GET['usecollapsiblesidebar'];
         if ($var === '0' || $var === '1') {
-            // On usedarkmode is set, overwrite the cookie.
+            // On usecollapsiblesidebar is set, overwrite the cookie.
             return (bool)$var;
         }
-        $varCookie = !isset($_COOKIE['usedarkmode']) ? '' : $_COOKIE['usedarkmode'];
+        $varCookie = !isset($_COOKIE['usecollapsiblesidebar']) ? '' : $_COOKIE['usecollapsiblesidebar'];
         if ($varCookie === '0' || $varCookie === '1') {
-            // If usedarkmode not set, return cookie value.
+            // If usecollapsiblesidebar not set, return cookie value.
             return (bool)$varCookie;
         }
         // Otherwise return false
