@@ -28,7 +28,7 @@ class Hooks implements
         }
 
         if ($this->isCollapsibleSidebarActive()) {
-            $out->addHtmlClasses('client-collapsibleSidebar');
+            $out->addHtmlClasses('client-collapsedsidebar');
         }
     }
 
@@ -39,14 +39,14 @@ class Hooks implements
      */
     private function isCollapsibleSidebarActive(): bool
     {
-        $var = !isset($_GET['usecollapsiblesidebar']) ? '' : $_GET['usecollapsiblesidebar'];
+        $var = !isset($_GET['usecollapsedsidebar']) ? '' : $_GET['usecollapsedsidebar'];
         if ($var === '0' || $var === '1') {
-            // On usecollapsiblesidebar is set, overwrite the cookie.
+            // On usecollapsedsidebar is set, overwrite the cookie.
             return (bool)$var;
         }
-        $varCookie = !isset($_COOKIE['usecollapsiblesidebar']) ? '' : $_COOKIE['usecollapsiblesidebar'];
+        $varCookie = !isset($_COOKIE['usecollapsedsidebar']) ? '' : $_COOKIE['usecollapsedsidebar'];
         if ($varCookie === '0' || $varCookie === '1') {
-            // If usecollapsiblesidebar not set, return cookie value.
+            // If usecollapsedsidebar not set, return cookie value.
             return (bool)$varCookie;
         }
         // Otherwise return false
