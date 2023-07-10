@@ -5,5 +5,8 @@
 		"wikimedia/language/es2022",
 		"wikimedia/mediawiki",
 		"wikimedia/jquery"
-	]
+	],
+    "rules" : {
+        "no-jquery/no-global-selector": "off"
+    }
 }
