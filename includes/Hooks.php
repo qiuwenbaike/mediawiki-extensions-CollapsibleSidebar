@@ -18,17 +18,12 @@ class Hooks implements
      */
     public function onBeforePageDisplay($out, $skin): void
     {
-        $skinName = $skin->getSkinName;
-        if ($skinName === 'gongbi' || $skinName === 'timeless') {
-            $out->addModules('ext.CollapsibleSidebar-gongbi.js');
-            $out->addModuleStyles('ext.CollapsibleSidebar-gongbi.css');
-        } else if ($skinName === 'vector') {
-            $out->addModules('ext.CollapsibleSidebar-vector.js');
-            $out->addModuleStyles('ext.CollapsibleSidebar-vector.css');
-        }
-
+        $out->addModules('ext.CollapsibleSidebar.js');
+        $out->addModuleStyles('ext.CollapsibleSidebar.css');
         if ($this->isCollapsibleSidebarActive()) {
             $out->addHtmlClasses('client-collapsedsidebar');
+        } else {
+            $out->addHtmlClasses('client-shownsidebar');
         }
     }
 
