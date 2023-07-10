@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\CollapsibleSidebar;
 
-use IContextSource;
 use MediaWiki\Hook\BeforePageDisplayHook;
 use OutputPage;
 use Skin;
@@ -19,29 +18,26 @@ class Hooks implements
      */
     public function onBeforePageDisplay($out, $skin): void
     {
-        $out->addModules('ext.CollapsibleSidebar.js');
-        $out->addModuleStyles('ext.CollapsibleSidebar.css');
+        $skinName = $skin->getSkinName;
+        if ($skinName === 'gongbi' || $skinName === 'timeless') {
+            $out->addModules('ext.CollapsibleSidebar-gongbi.js');
+            $out->addModuleStyles('ext.CollapsibleSidebar-gongbi.css');
+        } else if ($skinName === 'vector') {
+            $out->addModules('ext.CollapsibleSidebar-vector.js');
+            $out->addModuleStyles('ext.CollapsibleSidebar-vector.css');
+        }
 
-        if ($this->isCollapsibleSidebarActive($skin)) {
-            // The class must be on the <html> element because the CSS filter creates a new stacking context.
-            // If we use the <body> instead (OutputPage::addBodyClasses), any fixed-positioned content
-            // will be hidden in accordance with the w3c spec: https://www.w3.org/TR/filter-effects-1/#FilterProperty
-            // Fixed elements may still be hidden in Firefox due to https://bugzilla.mozilla.org/show_bug.cgi?id=1650522
-            $out->addHtmlClasses('client-CollapsibleSidebar');
-            $out->addMeta('color-scheme', 'dark');
-        } else {
-            $out->addHtmlClasses('client-lightmode');
-            $out->addMeta('color-scheme', 'light');
+        if ($this->isCollapsibleSidebarActive()) {
+            $out->addHtmlClasses('client-collapsibleSidebar');
         }
     }
 
     /**
      * Is the Dark Mode active?
      *
-     * @param IContextSource $context
      * @return bool
      */
-    private function isCollapsibleSidebarActive(IContextSource $context): bool
+    private function isCollapsibleSidebarActive(): bool
     {
         $var = !isset($_GET['usecollapsiblesidebar']) ? '' : $_GET['usecollapsiblesidebar'];
         if ($var === '0' || $var === '1') {
