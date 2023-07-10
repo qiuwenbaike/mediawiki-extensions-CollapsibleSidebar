@@ -6,6 +6,9 @@
  */
 'use strict';
 ( () => {
+	if ( ![ 'vector', 'vector-2022', 'gongbi', 'timeless', 'write' ].includes( mw.config.get( 'skin' ) ) ) {
+		return;
+	}
 	const getCookie = ( name ) => ( '; '
 		.concat( decodeURIComponent( document.cookie ) )
 		.split( '; '.concat( name, '=' ) )
@@ -75,6 +78,10 @@
 			sidebarButton.src = images.showSidebarButtonIcon;
 			sidebarButton.alt = mw.message( 'collapsiblesidebar-show-link' );
 			sidebarButton.title = mw.message( 'collapsiblesidebar-show-link' );
+			if ( mw.config.get( 'skin' ) === 'write' ) {
+				document.getElementById( 'content' ).parentElement.classList.add( 'col-md-12' );
+				document.getElementById( 'content' ).parentElement.classList.remove( 'col-md-9' );
+			}
 		},
 		show: () => {
 			document.documentElement.classList.add( 'client-shownsidebar' );
@@ -84,6 +91,10 @@
 			sidebarButton.src = images.hideSidebarButtonIcon;
 			sidebarButton.alt = mw.message( 'collapsiblesidebar-collapse-link' );
 			sidebarButton.title = mw.message( 'collapsiblesidebar-collapse-link-tooltip' );
+			if ( mw.config.get( 'skin' ) === 'write' ) {
+				document.getElementById( 'content' ).parentElement.classList.add( 'col-md-9' );
+				document.getElementById( 'content' ).parentElement.classList.remove( 'col-md-12' );
+			}
 		}
 	};
 	const checkSidebar = () => {
