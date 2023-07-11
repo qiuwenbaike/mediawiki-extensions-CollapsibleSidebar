@@ -59,8 +59,8 @@
 	/* add EventListener to Window */
 	const windowEventFunction = () => {
 		if ( document.getElementById( 'cat_a_lot' ) ||
-            document.getElementById( 'proveit' ) ||
-            document.getElementsByClassName( 'wordcount' )[ 0 ] ) {
+			document.getElementById( 'proveit' ) ||
+			document.getElementsByClassName( 'wordcount' )[ 0 ] ) {
 			sidebarButton.style.bottom = '206px';
 		} else {
 			sidebarButton.style.bottom = '162px';
