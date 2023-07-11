@@ -102,11 +102,10 @@
 		sidebarCollapseButton.title = mw.message( 'collapsiblesidebar-collapse-link-tooltip' );
 		sidebarCollapseButton.draggable = false;
 		document.getElementById( 'mw-navigation' ).appendChild( sidebarCollapseButton );
-		const originMwLogo = mwWikiLogo;
 		const newMwLogo = document.createElement( 'a' );
 		newMwLogo.id = 'sidebarCollapseLink';
-		newMwLogo.href = originMwLogo.href;
-		newMwLogo.title = originMwLogo.title;
+		newMwLogo.href = mwWikiLogo.href;
+		newMwLogo.title = mwWikiLogo.title;
 		const sliderCollapseLogo = document.createElement( 'img' );
 		sliderCollapseLogo.id = 'sliderCollapseLogo';
 		sliderCollapseLogo.src = images.logo;
@@ -119,23 +118,19 @@
 			switchMode.hide();
 		}
 		updatePosition();
-		const mouseEvent = function ( event ) {
-			this.style.background = event.type === 'mouseout' ? '#fff' : 'rgb(223, 245, 255)';
+		const mouseEvent = ( { type } ) => {
+			sidebarCollapseButton.style.opacity = type === 'mouseenter' ? '1' : '0.7';
 		};
 		sidebarCollapseButton
 			.addEventListener( 'click', () => {
 				if ( isSidebarHide ) {
-					switchMode.show()();
+					switchMode.show();
 				} else {
 					switchMode.hide();
 				}
 			} );
-		sidebarCollapseButton.addEventListener( 'mouseout', ( event ) => {
-			mouseEvent( event );
-		} );
-		sidebarCollapseButton.addEventListener( 'mouseover', ( event ) => {
-			mouseEvent( event );
-		} );
+		sidebarCollapseButton.addEventListener( 'mouseenter', mouseEvent );
+		sidebarCollapseButton.addEventListener( 'mouseleave', mouseEvent );
 		window.addEventListener( 'resize', () => {
 			updatePosition();
 		} );
