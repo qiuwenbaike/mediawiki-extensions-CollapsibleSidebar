@@ -73,42 +73,75 @@
 	window.addEventListener( 'scroll', windowEventFunction );
 	window.addEventListener( 'selectionchange', windowEventFunction );
 	/* Code for Vector Legacy */
-
-	const isMobile = /android|ipad|iphone|mobile/i.test( navigator.userAgent );
 	const mwWikiLogo = document.getElementsByClassName( 'mw-wiki-logo' )[ 0 ];
-	let items;
-	const updatePositionHelper = ( positionLeftObject ) => {
-		for ( const [ item, positionLeft ] of Object.entries( positionLeftObject ) ) {
-			if ( positionLeft === '' ) {
-				continue;
-			}
-			const element = items[ item ];
-			const currentPositionLeft = element.style.left;
-			if ( currentPositionLeft !== positionLeft ) {
-				element.style.left = positionLeft;
-			}
+	const innerWidth = window.innerWidth;
+	const outerWidth = window.outerWidth;
+	const offsetWidth = document.body.offsetWidth;
+	const bodyWidth = ( /android|ipad|iphone|mobile/i.test( navigator.userAgent ) ?
+		( outerWidth > 0 ? outerWidth : offsetWidth ) :
+		innerWidth > 0 ? innerWidth : offsetWidth
+	) ?? 0;
+	/* Code for Vector Legacy */
+	const switchModeVector = {
+		hide: () => {
+			document.getElementById( 'sidebarCollapse' ).src = images.prev;
+			document.getElementById( 'content' ).style.marginLeft = '';
+			document.getElementById( 'footer' ).style.marginLeft = '';
+			document.getElementById( 'left-navigation' ).style.marginLeft = '';
+			document.getElementById( 'mw-panel' ).style.display = '';
+			document.getElementById( 'sliderCollapseLogo' ).style.display = 'none';
+			document.getElementById( 'sliderCollapseLogo' ).style.left = '';
+			document.getElementById( 'sidebarCollapse' ).style.left = ( bodyWidth >= 982 ) ? '10.3em' : '9.3em';
+		},
+		show: () => {
+			document.getElementById( 'sidebarCollapse' ).src = images.next;
+			document.getElementById( 'content' ).style.marginLeft = '1em';
+			document.getElementById( 'footer' ).style.marginLeft = '1em';
+			document.getElementById( 'left-navigation' ).style.marginLeft = '10em';
+			document.getElementById( 'mw-panel' ).style.display = 'none';
+			document.getElementById( 'sliderCollapseLogo' ).style.display = 'block';
+			document.getElementById( 'sliderCollapseLogo' ).style.left = '2em';
+			document.getElementById( 'sidebarCollapse' ).style.left = '0.3em';
 		}
 	};
-	const updatePosition = () => {
-		const innerWidth = window.innerWidth;
-		const outerWidth = window.outerWidth;
-		const offsetWidth = document.body.offsetWidth;
-		const bodyWidth = ( isMobile ?
-			( outerWidth > 0 ? outerWidth : offsetWidth ) :
-			innerWidth > 0 ? innerWidth : offsetWidth
-		) ?? 0;
-		if ( bodyWidth >= 982 ) {
-			updatePositionHelper(
-				isSidebarCollapsed ?
-					{ sidebarCollapseButton: '0.3em', sliderCollapseLogo: '2.5em' } :
-					{ sidebarCollapseButton: '10.3em', sliderCollapseLogo: '' }
-			);
-		} else {
-			updatePositionHelper(
-				isSidebarCollapsed ?
-					{ sidebarCollapseButton: '0.3em', sliderCollapseLogo: '2.5em' } :
-					{ sidebarCollapseButton: '9.3em', sliderCollapseLogo: '' }
-			);
+	const collapsibleSidebarVector = ( observer ) => {
+		observer?.disconnect();
+		/* sidebarCollapseButton */
+		const sidebarCollapseButton = document.createElement( 'img' );
+		sidebarCollapseButton.id = 'sidebarCollapse';
+		sidebarCollapseButton.src = images.prev;
+		sidebarCollapseButton.alt = mw.message( 'collapsiblesidebar-collapse-link' );
+		sidebarCollapseButton.title = mw.message( 'collapsiblesidebar-collapse-link-tooltip' );
+		sidebarCollapseButton.draggable = false;
+		sidebarCollapseButton.style.left = ( bodyWidth >= 982 ) ? '10.3em' : '9.3em';
+		document.getElementById( 'mw-navigation' ).appendChild( sidebarCollapseButton );
+		/* newMwLogo */
+		const newMwLogo = document.createElement( 'a' );
+		newMwLogo.id = 'sidebarCollapseLink';
+		newMwLogo.href = mwWikiLogo.href;
+		newMwLogo.title = mwWikiLogo.title;
+		/* sliderCollapseLogo */
+		const sliderCollapseLogo = document.createElement( 'img' );
+		sliderCollapseLogo.id = 'sliderCollapseLogo';
+		sliderCollapseLogo.src = images.logo;
+		sliderCollapseLogo.draggable = false;
+		newMwLogo.appendChild( sliderCollapseLogo );
+		document.getElementById( 'mw-navigation' ).appendChild( newMwLogo );
+		const mouseEvent = ( { type } ) => {
+			sidebarCollapseButton.style.opacity = type === 'mouseenter' ? '1' : '0.7';
+		};
+		sidebarCollapseButton.addEventListener( 'mouseenter', mouseEvent );
+		sidebarCollapseButton.addEventListener( 'mouseleave', mouseEvent );
+	};
+	/* Code for Write */
+	const switchModeWrite = {
+		hide: () => {
+			document.getElementById( 'content' ).parentElement.classList.add( 'col-md-12' );
+			document.getElementById( 'content' ).parentElement.classList.remove( 'col-md-9' );
+		},
+		show: () => {
+			document.getElementById( 'content' ).parentElement.classList.add( 'col-md-9' );
+			document.getElementById( 'content' ).parentElement.classList.remove( 'col-md-12' );
 		}
 	};
 	/* switchMode function */
@@ -122,12 +155,10 @@
 			sidebarButton.alt = mw.message( 'collapsiblesidebar-show-link' );
 			sidebarButton.title = mw.message( 'collapsiblesidebar-show-link-tooltip' );
 			if ( mw.config.get( 'skin' ) === 'write' ) {
-				document.getElementById( 'content' ).parentElement.classList.add( 'col-md-12' );
-				document.getElementById( 'content' ).parentElement.classList.remove( 'col-md-9' );
+				switchModeWrite.hide();
 			}
 			if ( mw.config.get( 'skin' ) === 'vector' ) {
-				items.sidebarCollapseButton.src = images.next;
-				updatePosition();
+				switchModeVector.hide();
 			}
 		},
 		show: () => {
@@ -139,12 +170,10 @@
 			sidebarButton.alt = mw.message( 'collapsiblesidebar-collapse-link' );
 			sidebarButton.title = mw.message( 'collapsiblesidebar-collapse-link-tooltip' );
 			if ( mw.config.get( 'skin' ) === 'write' ) {
-				document.getElementById( 'content' ).parentElement.classList.add( 'col-md-9' );
-				document.getElementById( 'content' ).parentElement.classList.remove( 'col-md-12' );
+				switchModeWrite.show();
 			}
 			if ( mw.config.get( 'skin' ) === 'vector' ) {
-				items.sidebarCollapseButton.src = images.prev;
-				updatePosition();
+				switchModeVector.show();
 			}
 		}
 	};
@@ -170,75 +199,13 @@
 	sidebarButton.addEventListener( 'click', () => {
 		modeSwitcher();
 	} );
-	checkSidebar();
-	/* Code for Vector Legacy */
-	const collapsibleSidebarMain = ( observer ) => {
-		observer?.disconnect();
-		/* sidebarCollapseButton */
-		const sidebarCollapseButton = document.createElement( 'img' );
-		sidebarCollapseButton.id = 'sidebarCollapse';
-		sidebarCollapseButton.src = images.prev;
-		sidebarCollapseButton.alt = mw.message( 'collapsiblesidebar-collapse-link' );
-		sidebarCollapseButton.title = mw.message( 'collapsiblesidebar-collapse-link-tooltip' );
-		sidebarCollapseButton.draggable = false;
-		document.getElementById( 'mw-navigation' ).appendChild( sidebarCollapseButton );
-		/* newMwLogo */
-		const newMwLogo = document.createElement( 'a' );
-		newMwLogo.id = 'sidebarCollapseLink';
-		newMwLogo.href = mwWikiLogo.href;
-		newMwLogo.title = mwWikiLogo.title;
-		/* sliderCollapseLogo */
-		const sliderCollapseLogo = document.createElement( 'img' );
-		sliderCollapseLogo.id = 'sliderCollapseLogo';
-		sliderCollapseLogo.src = images.logo;
-		sliderCollapseLogo.draggable = false;
-		newMwLogo.appendChild( sliderCollapseLogo );
-		document.getElementById( 'mw-navigation' ).appendChild( newMwLogo );
-		items = { sidebarCollapseButton, sliderCollapseLogo };
-		if ( getCookie( cookieName ) === '1' ) {
-			switchMode.hide();
-		}
-		updatePosition();
-		const mouseEvent = ( { type } ) => {
-			sidebarCollapseButton.style.opacity = type === 'mouseenter' ? '1' : '0.7';
-		};
-		sidebarCollapseButton
-			.addEventListener( 'click', () => {
-				if ( isSidebarCollapsed ) {
-					switchMode.show();
-				} else {
-					switchMode.hide();
-				}
-			} );
-		sidebarCollapseButton.addEventListener( 'mouseenter', mouseEvent );
-		sidebarCollapseButton.addEventListener( 'mouseleave', mouseEvent );
-		window.addEventListener( 'resize', () => {
-			updatePosition();
-		} );
-	};
-	const collapsibleSidebarInit = () => {
-		if ( !document.getElementById( 'mw-navigation' ) ) {
-			const observer = new MutationObserver( ( mutations ) => {
-				for ( const mutation of mutations ) {
-					for ( const node of mutation.addedNodes ) {
-						if ( !( node instanceof HTMLElement ) ) {
-							continue;
-						}
-						if ( node.id === 'mw-navigation' ) {
-							collapsibleSidebarMain( observer );
-							break;
-						}
-					}
-				}
-			} );
-			observer.observe( document.documentElement, {
-				childList: true
-			} );
-			return;
-		}
-		collapsibleSidebarMain();
-	};
+	/* Entry function */
 	if ( mw.config.get( 'skin' ) === 'vector' ) {
-		collapsibleSidebarInit();
+		collapsibleSidebarVector();
+		document.getElementById( 'sidebarCollapse' )
+			.addEventListener( 'click', () => {
+				modeSwitcher();
+			} );
 	}
+	checkSidebar();
 } )();
