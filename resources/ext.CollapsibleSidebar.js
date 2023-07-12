@@ -115,7 +115,6 @@
 	const switchMode = {
 		hide: () => {
 			document.documentElement.classList.add( 'client-collapsedsidebar' );
-			document.documentElement.classList.remove( 'client-shownsidebar' );
 			setCookie( cookieName, '0', '-1' );
 			setCookie( cookieName, '1', 1e9 );
 			sidebarButton.src = images.showSidebarButtonIcon;
@@ -129,7 +128,6 @@
 			}
 		},
 		show: () => {
-			document.documentElement.classList.add( 'client-shownsidebar' );
 			document.documentElement.classList.remove( 'client-collapsedsidebar' );
 			setCookie( cookieName, '1', '-1' );
 			setCookie( cookieName, '0', 1e9 );
