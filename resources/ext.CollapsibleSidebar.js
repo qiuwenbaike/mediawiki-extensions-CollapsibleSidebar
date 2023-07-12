@@ -55,8 +55,8 @@
 	sidebarButton.style.opacity = '0.7';
 	sidebarButton.style.bottom = '162px';
 	/* add EventListener to button */
-	const eventTargetFunction = ( { type } ) => {
-		sidebarButton.style.opacity = type === 'mouseenter' ? '1' : '0.7';
+	const eventTargetFunction = ( event ) => {
+		sidebarButton.style.opacity = event.type === 'mouseenter' ? '1' : '0.7';
 	};
 	sidebarButton.addEventListener( 'mouseenter', eventTargetFunction );
 	sidebarButton.addEventListener( 'mouseleave', eventTargetFunction );
