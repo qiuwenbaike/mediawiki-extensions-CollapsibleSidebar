@@ -74,6 +74,7 @@
 	window.addEventListener( 'scroll', windowEventFunction );
 	window.addEventListener( 'selectionchange', windowEventFunction );
 	/* Code for Vector Legacy */
+	/*
 	const switchModeVector = {
 		bodyWidth: ( /android|ipad|iphone|mobile/i.test( navigator.userAgent ) ?
 			( window.outerWidth > 0 ? window.outerWidth : document.body.offsetWidth ) :
@@ -87,7 +88,8 @@
 			document.getElementById( 'mw-panel' ).style.display = '';
 			document.getElementById( 'sliderCollapseLogo' ).style.display = 'none';
 			document.getElementById( 'sliderCollapseLogo' ).style.left = '';
-			document.getElementById( 'sidebarCollapse' ).style.left = ( switchModeVector.bodyWidth >= 982 ) ? '10.3em' : '9.3em';
+			document.getElementById( 'sidebarCollapse' ).style.left =
+				( switchModeVector.bodyWidth >= 982 ) ? '10.3em' : '9.3em';
 		},
 		show: () => {
 			document.getElementById( 'sidebarCollapse' ).src = images.next;
@@ -100,6 +102,7 @@
 			document.getElementById( 'sidebarCollapse' ).style.left = '0.3em';
 		}
 	};
+	*/
 	/* Code for Write */
 	const switchModeWrite = {
 		hide: () => {
@@ -123,9 +126,11 @@
 			if ( mw.config.get( 'skin' ) === 'write' ) {
 				switchModeWrite.hide();
 			}
-			if ( mw.config.get( 'skin' ) === 'vector' ) {
+			/*
+            if ( mw.config.get( 'skin' ) === 'vector' ) {
 				switchModeVector.hide();
 			}
+            */
 		},
 		show: () => {
 			document.documentElement.classList.remove( 'client-collapsedsidebar' );
@@ -137,9 +142,11 @@
 			if ( mw.config.get( 'skin' ) === 'write' ) {
 				switchModeWrite.show();
 			}
-			if ( mw.config.get( 'skin' ) === 'vector' ) {
+			/*
+            if ( mw.config.get( 'skin' ) === 'vector' ) {
 				switchModeVector.show();
 			}
+            */
 		}
 	};
 	const checkSidebar = () => {
