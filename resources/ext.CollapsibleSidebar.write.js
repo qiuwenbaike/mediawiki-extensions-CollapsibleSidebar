@@ -11,7 +11,7 @@
  */
 'use strict';
 (() => {
-	if (!['write'].includes(mw.config.get('skin'))) {
+	if (![ 'write' ].includes(mw.config.get('skin'))) {
 		return;
 	}
 	const cookieName = 'usecollapsedsidebar';

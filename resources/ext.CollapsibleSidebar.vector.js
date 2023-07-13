@@ -11,7 +11,7 @@
  */
 'use strict';
 (() => {
-	if (!['vector'].includes(mw.config.get('skin'))) {
+	if (![ 'vector' ].includes(mw.config.get('skin'))) {
 		return;
 	}
 	const cookieName = 'usecollapsedsidebar';
