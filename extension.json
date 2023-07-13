@@ -1,7 +1,7 @@
 {
 	"name": "CollapsibleSidebar",
 	"version": "0.4.0",
-	"author": [ "MusikAnimal", "R4356th", "AnYi", "WaitSpring" ],
+	"author": ["MusikAnimal", "R4356th", "AnYi", "WaitSpring"],
 	"url": "https://git.qiuwen.wiki/Fork/mediawiki-extensions-CollapsibleSidebar",
 	"descriptionmsg": "collapsiblesidebar-desc",
 	"license-name": "GPL-3.0",
@@ -18,40 +18,36 @@
 	"HookHandlers": {
 		"main": {
 			"class": "MediaWiki\\Extension\\CollapsibleSidebar\\Hooks",
-			"services": [ "MainConfig" ]
+			"services": ["MainConfig"]
 		}
 	},
 	"MessagesDirs": {
-		"CollapsibleSidebar": [ "i18n" ]
+		"CollapsibleSidebar": ["i18n"]
 	},
 	"ResourceModules": {
-		"ext.CollapsibleSidebar.cookie": {
-			"es6": true,
-			"packageFiles": [ "ext.CollapsibleSidebar.cookie.js" ]
-		},
 		"ext.CollapsibleSidebar": {
 			"es6": true,
-			"packageFiles": [ "ext.CollapsibleSidebar.js" ],
+			"packageFiles": [
+				"ext.CollapsibleSidebar.cookie.js",
+				"ext.CollapsibleSidebar.js"
+			],
 			"messages": [
 				"collapsiblesidebar-collapse-link",
 				"collapsiblesidebar-collapse-link-tooltip",
 				"collapsiblesidebar-show-link",
 				"collapsiblesidebar-show-link-tooltip"
-			],
-			"dependencies": [
-				"ext.CollapsibleSidebar.cookie"
 			]
 		},
 		"ext.CollapsibleSidebar.write": {
 			"es6": true,
-			"packageFiles": [ "ext.CollapsibleSidebar.write.js" ]
+			"packageFiles": ["ext.CollapsibleSidebar.write.js"]
 		},
 		"ext.CollapsibleSidebar.vector": {
 			"es6": true,
-			"packageFiles": [ "ext.CollapsibleSidebar.vector.js" ]
+			"packageFiles": ["ext.CollapsibleSidebar.vector.js"]
 		},
 		"ext.CollapsibleSidebar.styles": {
-			"styles": [ "ext.CollapsibleSidebar.less" ]
+			"styles": ["ext.CollapsibleSidebar.less"]
 		}
 	},
 	"ResourceFileModulePaths": {
