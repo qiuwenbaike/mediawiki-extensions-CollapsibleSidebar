@@ -18,6 +18,7 @@
 - author: Qiuwen Baike Tech Team
 - base: [wordmark-favicon.svg][wordmark]
 - license: [CC-BY-SA-4.0][cc-by-sa]
+- trademark: 求闻 ® and 求闻百科 ® are registered trademarks in China.
 
 ## nextIcon
 
