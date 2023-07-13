@@ -50,8 +50,12 @@
 		images.showSidebarButtonIcon :
 		images.hideSidebarButtonIcon;
 	sidebarButton.draggable = false;
-	sidebarButton.alt = isSidebarCollapsed ? mw.message( 'collapsiblesidebar-show-link' ) : mw.message( 'collapsiblesidebar-hide-link' );
-	sidebarButton.title = isSidebarCollapsed ? mw.message( 'collapsiblesidebar-show-link-tooltip' ) : mw.message( 'collapsiblesidebar-hide-link-tooltip' );
+	sidebarButton.alt = isSidebarCollapsed ?
+		mw.message( 'collapsiblesidebar-show-link' ) :
+		mw.message( 'collapsiblesidebar-hide-link' );
+	sidebarButton.title = isSidebarCollapsed ?
+		mw.message( 'collapsiblesidebar-show-link-tooltip' ) :
+		mw.message( 'collapsiblesidebar-hide-link-tooltip' );
 	sidebarButton.style.opacity = '0.7';
 	sidebarButton.style.bottom = '162px';
 	/* add EventListener to button */
@@ -73,47 +77,6 @@
 	};
 	window.addEventListener( 'scroll', windowEventFunction );
 	window.addEventListener( 'selectionchange', windowEventFunction );
-	/* Code for Vector Legacy */
-	/*
-	const switchModeVector = {
-		bodyWidth: ( /android|ipad|iphone|mobile/i.test( navigator.userAgent ) ?
-			( window.outerWidth > 0 ? window.outerWidth : document.body.offsetWidth ) :
-			window.innerWidth > 0 ? window.innerWidth : document.body.offsetWidth
-		) ?? 0,
-		hide: () => {
-			document.getElementById( 'sidebarCollapse' ).src = images.prev;
-			document.getElementById( 'content' ).style.marginLeft = '';
-			document.getElementById( 'footer' ).style.marginLeft = '';
-			document.getElementById( 'left-navigation' ).style.marginLeft = '';
-			document.getElementById( 'mw-panel' ).style.display = '';
-			document.getElementById( 'sliderCollapseLogo' ).style.display = 'none';
-			document.getElementById( 'sliderCollapseLogo' ).style.left = '';
-			document.getElementById( 'sidebarCollapse' ).style.left =
-				( switchModeVector.bodyWidth >= 982 ) ? '10.3em' : '9.3em';
-		},
-		show: () => {
-			document.getElementById( 'sidebarCollapse' ).src = images.next;
-			document.getElementById( 'content' ).style.marginLeft = '1em';
-			document.getElementById( 'footer' ).style.marginLeft = '1em';
-			document.getElementById( 'left-navigation' ).style.marginLeft = '10em';
-			document.getElementById( 'mw-panel' ).style.display = 'none';
-			document.getElementById( 'sliderCollapseLogo' ).style.display = 'block';
-			document.getElementById( 'sliderCollapseLogo' ).style.left = '2em';
-			document.getElementById( 'sidebarCollapse' ).style.left = '0.3em';
-		}
-	};
-	*/
-	/* Code for Write */
-	const switchModeWrite = {
-		hide: () => {
-			document.getElementById( 'content' ).parentElement.classList.add( 'col-md-12' );
-			document.getElementById( 'content' ).parentElement.classList.remove( 'col-md-9' );
-		},
-		show: () => {
-			document.getElementById( 'content' ).parentElement.classList.add( 'col-md-9' );
-			document.getElementById( 'content' ).parentElement.classList.remove( 'col-md-12' );
-		}
-	};
 	/* switchMode function */
 	const switchMode = {
 		hide: () => {
@@ -123,14 +86,6 @@
 			sidebarButton.src = images.showSidebarButtonIcon;
 			sidebarButton.alt = mw.message( 'collapsiblesidebar-show-link' );
 			sidebarButton.title = mw.message( 'collapsiblesidebar-show-link-tooltip' );
-			if ( mw.config.get( 'skin' ) === 'write' ) {
-				switchModeWrite.hide();
-			}
-			/*
-            if ( mw.config.get( 'skin' ) === 'vector' ) {
-				switchModeVector.hide();
-			}
-            */
 		},
 		show: () => {
 			document.documentElement.classList.remove( 'client-collapsedsidebar' );
@@ -139,14 +94,6 @@
 			sidebarButton.src = images.hideSidebarButtonIcon;
 			sidebarButton.alt = mw.message( 'collapsiblesidebar-collapse-link' );
 			sidebarButton.title = mw.message( 'collapsiblesidebar-collapse-link-tooltip' );
-			if ( mw.config.get( 'skin' ) === 'write' ) {
-				switchModeWrite.show();
-			}
-			/*
-            if ( mw.config.get( 'skin' ) === 'vector' ) {
-				switchModeVector.show();
-			}
-            */
 		}
 	};
 	const checkSidebar = () => {
