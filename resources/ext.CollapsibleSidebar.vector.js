@@ -10,8 +10,8 @@
  * Rewrite in ES5 and ES6 by WaitSpring
  */
 'use strict';
-( () => {
-	if ( ![ 'vector' ].includes( mw.config.get( 'skin' ) ) ) {
+(() => {
+	if (!['vector'].includes(mw.config.get('skin'))) {
 		return;
 	}
 	const cookieName = 'usecollapsedsidebar';
@@ -20,39 +20,39 @@
 		next: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%232196f3' d='M17.1 5L14 8.1 29.9 24 14 39.9l3.1 3.1L36 24z'/%3E%3C/svg%3E",
 		prev: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%232196f3' d='M30.9 43l3.1-3.1L18.1 24 34 8.1 30.9 5 12 24z'/%3E%3C/svg%3E"
 	};
-	const isSidebarCollapsed = document.documentElement.classList.contains( 'client-collapsedsidebar' );
-	const sidebarButton = document.getElementById( 'sidebarButton' );
+	const isSidebarCollapsed = document.documentElement.classList.contains('client-collapsedsidebar');
+	const sidebarButton = document.getElementById('sidebarButton');
 	/* Code for vector */
 	const switchMode = {
-		bodyWidth: ( /android|ipad|iphone|mobile/i.test( navigator.userAgent ) ?
-			( window.outerWidth > 0 ? window.outerWidth : document.body.offsetWidth ) :
+		bodyWidth: (/android|ipad|iphone|mobile/i.test(navigator.userAgent) ?
+			(window.outerWidth > 0 ? window.outerWidth : document.body.offsetWidth) :
 			window.innerWidth > 0 ? window.innerWidth : document.body.offsetWidth
 		) ?? 0,
 		hide: () => {
-			document.getElementById( 'sidebarCollapse' ).src = images.prev;
-			document.getElementById( 'content' ).style.marginLeft = '';
-			document.getElementById( 'footer' ).style.marginLeft = '';
-			document.getElementById( 'left-navigation' ).style.marginLeft = '';
-			document.getElementById( 'mw-panel' ).style.display = '';
-			document.getElementById( 'sliderCollapseLogo' ).style.display = 'none';
-			document.getElementById( 'sliderCollapseLogo' ).style.left = '';
-			document.getElementById( 'sidebarCollapse' ).style.left =
-				( switchMode.bodyWidth >= 982 ) ? '10.3em' : '9.3em';
+			document.getElementById('sidebarCollapse').src = images.prev;
+			document.getElementById('content').style.marginLeft = '';
+			document.getElementById('footer').style.marginLeft = '';
+			document.getElementById('left-navigation').style.marginLeft = '';
+			document.getElementById('mw-panel').style.display = '';
+			document.getElementById('sliderCollapseLogo').style.display = 'none';
+			document.getElementById('sliderCollapseLogo').style.left = '';
+			document.getElementById('sidebarCollapse').style.left =
+				(switchMode.bodyWidth >= 982) ? '10.3em' : '9.3em';
 		},
 		show: () => {
-			document.getElementById( 'sidebarCollapse' ).src = images.next;
-			document.getElementById( 'content' ).style.marginLeft = '1em';
-			document.getElementById( 'footer' ).style.marginLeft = '1em';
-			document.getElementById( 'left-navigation' ).style.marginLeft = '10em';
-			document.getElementById( 'mw-panel' ).style.display = 'none';
-			document.getElementById( 'sliderCollapseLogo' ).style.display = 'block';
-			document.getElementById( 'sliderCollapseLogo' ).style.left = '2em';
-			document.getElementById( 'sidebarCollapse' ).style.left = '0.3em';
+			document.getElementById('sidebarCollapse').src = images.next;
+			document.getElementById('content').style.marginLeft = '1em';
+			document.getElementById('footer').style.marginLeft = '1em';
+			document.getElementById('left-navigation').style.marginLeft = '10em';
+			document.getElementById('mw-panel').style.display = 'none';
+			document.getElementById('sliderCollapseLogo').style.display = 'block';
+			document.getElementById('sliderCollapseLogo').style.left = '2em';
+			document.getElementById('sidebarCollapse').style.left = '0.3em';
 		}
 	};
 	const checkSidebar = () => {
-		if ( window.getCookie( cookieName ) === '' ) {
-			if ( isSidebarCollapsed ) {
+		if (window.getCookie(cookieName) === '') {
+			if (isSidebarCollapsed) {
 				switchMode.hide();
 			} else {
 				switchMode.show();
@@ -60,18 +60,18 @@
 		}
 	};
 	const modeSwitcher = () => {
-		if ( window.getCookie( cookieName ) === '' ) {
+		if (window.getCookie(cookieName) === '') {
 			checkSidebar();
 		}
-		if ( window.getCookie( cookieName ) === '0' ) {
+		if (window.getCookie(cookieName) === '0') {
 			switchMode.hide();
 		} else {
 			switchMode.show();
 		}
 	};
-	sidebarButton.addEventListener( 'click', () => {
+	sidebarButton.addEventListener('click', () => {
 		modeSwitcher();
-	} );
+	});
 	/* Entry function */
 	checkSidebar();
-} )();
+})();
