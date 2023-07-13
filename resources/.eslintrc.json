@@ -6,7 +6,7 @@
 		"wikimedia/mediawiki",
 		"wikimedia/jquery"
 	],
-    "rules" : {
-        "no-jquery/no-global-selector": "off"
-    }
+	"rules": {
+		"no-jquery/no-global-selector": "off"
+	}
 }
