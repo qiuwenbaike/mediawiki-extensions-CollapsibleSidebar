@@ -63,13 +63,11 @@
 		) ?? 0,
 		hide: () => {
 			document.getElementById('sidebarCollapse').src = images.next;
-			document.getElementById('sliderCollapseLogo').style.display = 'block';
 			document.getElementById('sidebarCollapse').style.left =
 				(switchMode.bodyWidth >= 982) ? '10.3em' : '9.3em';
 		},
 		show: () => {
 			document.getElementById('sidebarCollapse').src = images.prev;
-			document.getElementById('sliderCollapseLogo').style.display = 'none';
 			document.getElementById('sidebarCollapse').style.left = '0.3em';
 		}
 	};
