@@ -20,10 +20,10 @@ class Hooks implements
 	{
 		$out->addModules('ext.CollapsibleSidebar.js');
 		$out->addModuleStyles('ext.CollapsibleSidebar.styles');
-		if ($skin instanceof MediaWiki\Skins\Vector\SkinVector) {
+		if ($skin->getSkinName() === 'vector') {
 			$out->addModules('ext.CollapsibleSidebar.vector');
 		}
-		if ($skin instanceof MediaWiki\Skins\Write\SkinWrite) {
+		if ($skin->getSkinName() === 'write') {
 			$out->addModules('ext.CollapsibleSidebar.write');
 		}
 		if ($this->isSidebarCollapsed()) {
