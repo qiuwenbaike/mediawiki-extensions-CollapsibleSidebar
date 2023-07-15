@@ -35,6 +35,15 @@
 	cursor: pointer;
 }
 
+.client-collapsedsidebar {
+	.skin-vector:not( .skin-vector-2022 ) {
+		#mw-panel,
+		#sliderCollapseLogo {
+			display: none;
+		}
+	}
+}
+
 @media screen {
 	.skin-vector {
 		#sidebarCollapse {
@@ -49,13 +58,6 @@
 			-moz-user-select: none;
 			-webkit-user-select: none;
 			user-select: none;
-		}
-	}
-
-	.skin-vector.client-collapsedsidebar:not( .skin-vector-2022 ) {
-		#mw-panel,
-		#sliderCollapseLogo {
-			display: none;
 		}
 	}
 }
