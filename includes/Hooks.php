@@ -30,6 +30,9 @@ class Hooks implements
 				if ($skin->getSkinName() === 'write') {
 					$out->addModules('ext.CollapsibleSidebar.write');
 				}
+				if ($skin->getSkinName() === 'vector-2022') {
+					$out->addModules('ext.CollapsibleSidebar.write');
+				}
 			}
 			if ($this->isSidebarCollapsed()) {
 				$out->addHtmlClasses('client-collapsedsidebar');
