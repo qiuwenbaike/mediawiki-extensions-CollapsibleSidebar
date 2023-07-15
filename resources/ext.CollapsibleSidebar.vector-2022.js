@@ -20,10 +20,10 @@
 	/* Code for Write */
 	const switchMode = {
 		hide: () => {
-			document.body.classList.add('skin-vector-disable-max-width');
+			document.documentElement.classList.add('skin-vector-disable-max-width');
 		},
 		show: () => {
-			document.body.classList.remove('skin-vector-disable-max-width');
+			document.documentElement.classList.remove('skin-vector-disable-max-width');
 		}
 	};
 	const checkSidebar = () => {
