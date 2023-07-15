@@ -14,6 +14,12 @@
 	if (![ 'write' ].includes(mw.config.get('skin'))) {
 		return;
 	}
+	const getCookie = (name) => ('; '
+		.concat(decodeURIComponent(document.cookie))
+		.split('; '.concat(name, '='))
+		.pop()
+		.split(';')
+		.shift());
 	const cookieName = 'usecollapsedsidebar';
 	const isSidebarCollapsed = document.documentElement.classList.contains('client-collapsedsidebar');
 	const sidebarButton = document.getElementById('sidebarButton');
@@ -29,7 +35,7 @@
 		}
 	};
 	const checkSidebar = () => {
-		if (window.getCookie(cookieName) === '') {
+		if (getCookie(cookieName) === '') {
 			if (isSidebarCollapsed) {
 				switchMode.hide();
 			} else {
@@ -38,10 +44,10 @@
 		}
 	};
 	const modeSwitcher = () => {
-		if (window.getCookie(cookieName) === '') {
+		if (getCookie(cookieName) === '') {
 			checkSidebar();
 		}
-		if (window.getCookie(cookieName) === '0') {
+		if (getCookie(cookieName) === '0') {
 			switchMode.hide();
 		} else {
 			switchMode.show();

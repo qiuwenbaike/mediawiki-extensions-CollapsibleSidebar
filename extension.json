@@ -35,10 +35,6 @@
 				"collapsiblesidebar-show-link-tooltip"
 			]
 		},
-		"ext.CollapsibleSidebar.cookie": {
-			"es6": true,
-			"packageFiles": ["ext.CollapsibleSidebar.cookie.js"]
-		},
 		"ext.CollapsibleSidebar.write": {
 			"es6": true,
 			"packageFiles": ["ext.CollapsibleSidebar.write.js"]
