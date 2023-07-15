@@ -22,12 +22,14 @@ class Hooks implements
 		if (
 			in_array($skin->getSkinName(), $requiredSkins)
 		) {
-			$out->addModules('ext.CollapsibleSidebar.js');
 			$out->addModuleStyles('ext.CollapsibleSidebar.styles');
 			if ($skin->getSkinName() === 'vector') {
 				$out->addModules('ext.CollapsibleSidebar.vector');
-			} else if ($skin->getSkinName() === 'write') {
-				$out->addModules('ext.CollapsibleSidebar.write');
+			} else {
+				$out->addModules('ext.CollapsibleSidebar.js');
+				if ($skin->getSkinName() === 'write') {
+					$out->addModules('ext.CollapsibleSidebar.write');
+				}
 			}
 			if ($this->isSidebarCollapsed()) {
 				$out->addHtmlClasses('client-collapsedsidebar');
