@@ -44,14 +44,14 @@
 	document.body.appendChild(sidebarCollapse);
 	/* sliderCollapseLogo */
 	const sliderCollapseLogoLink = document.createElement('a');
-	sliderCollapseLogoLink.href = document.getElementsByClassName('mw-wiki-logo')[ 0 ].href;
-	sliderCollapseLogoLink.title = document.getElementsByClassName('mw-wiki-logo')[ 0 ].title;
+	sliderCollapseLogoLink.href = document.getElementsByClassName('mw-wiki-logo')[0].href;
+	sliderCollapseLogoLink.title = document.getElementsByClassName('mw-wiki-logo')[0].title;
 	const sliderCollapseLogo = document.createElement('img');
 	sliderCollapseLogo.id = 'sliderCollapseLogo';
 	sliderCollapseLogo.classList.add('mw-no-invert');
 	sliderCollapseLogo.src = images.logo;
-	sliderCollapseLogo.alt = document.getElementsByClassName('mw-wiki-logo')[ 0 ].title;
-	sliderCollapseLogo.title = document.getElementsByClassName('mw-wiki-logo')[ 0 ].title;
+	sliderCollapseLogo.alt = document.getElementsByClassName('mw-wiki-logo')[0].title;
+	sliderCollapseLogo.title = document.getElementsByClassName('mw-wiki-logo')[0].title;
 	sliderCollapseLogo.style.display = isSidebarCollapsed ? '' : 'none';
 	sliderCollapseLogoLink.appendChild(sliderCollapseLogo);
 	document.getElementById('mw-navigation').appendChild(sliderCollapseLogoLink);
@@ -62,16 +62,14 @@
 			window.innerWidth > 0 ? window.innerWidth : document.body.offsetWidth
 		) ?? 0,
 		hide: () => {
-			document.getElementById('sidebarCollapse').src = images.prev;
-			document.getElementById('sliderCollapseLogo').style.display = 'none';
-			document.getElementById('sliderCollapseLogo').style.left = '';
+			document.getElementById('sidebarCollapse').src = images.next;
+			document.getElementById('sliderCollapseLogo').style.display = 'block';
 			document.getElementById('sidebarCollapse').style.left =
 				(switchMode.bodyWidth >= 982) ? '10.3em' : '9.3em';
 		},
 		show: () => {
-			document.getElementById('sidebarCollapse').src = images.next;
-			document.getElementById('sliderCollapseLogo').style.display = 'block';
-			document.getElementById('sliderCollapseLogo').style.left = '2em';
+			document.getElementById('sidebarCollapse').src = images.prev;
+			document.getElementById('sliderCollapseLogo').style.display = 'none';
 			document.getElementById('sidebarCollapse').style.left = '0.3em';
 		}
 	};
