@@ -28,6 +28,18 @@
 	};
 	const isSidebarCollapsed = document.documentElement.classList.contains('client-collapsedsidebar');
 	const sidebarButton = document.getElementById('sidebarButton');
+	/* sidebarCollapse */
+	const sidebarCollapse = document.createElement('img');
+	sidebarCollapse.id = 'sidebarCollapse';
+	sidebarCollapse.src = isSidebarCollapsed ? images.next : images.prev;
+	sidebarCollapse.draggable = false;
+	sidebarCollapse.alt = isSidebarCollapsed ?
+		mw.message('collapsiblesidebar-show-link') :
+		mw.message('collapsiblesidebar-hide-link');
+	sidebarCollapse.title = isSidebarCollapsed ?
+		mw.message('collapsiblesidebar-show-link-tooltip') :
+		mw.message('collapsiblesidebar-hide-link-tooltip');
+	document.body.appendChild(sidebarCollapse);
 	/* Code for vector */
 	const switchMode = {
 		bodyWidth: (/android|ipad|iphone|mobile/i.test(navigator.userAgent) ?
