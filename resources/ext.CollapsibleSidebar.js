@@ -11,7 +11,7 @@
  */
 'use strict';
 (() => {
-	if (!['vector', 'gongbi', 'timeless', 'write'].includes(mw.config.get('skin'))) {
+	if (![ 'vector', 'gongbi', 'timeless', 'write' ].includes(mw.config.get('skin'))) {
 		return;
 	}
 	const getCookie = (name) => ('; '
@@ -69,7 +69,7 @@
 	const windowEventFunction = () => {
 		if (document.getElementById('cat_a_lot') ||
 			document.getElementById('proveit') ||
-			document.getElementsByClassName('wordcount')[0]) {
+			document.getElementsByClassName('wordcount')[ 0 ]) {
 			sidebarButton.style.bottom = '206px';
 		} else {
 			sidebarButton.style.bottom = '162px';
