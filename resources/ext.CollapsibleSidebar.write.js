@@ -1,9 +1,6 @@
 /**
  * collapsibleSidebar
  *
- * source: <https://git.qiuwen.wiki/InterfaceAdmin/Gadgets/src/branch/master/src/Gadgets/CollapsibleSidebar>
- * source: <https://git.qiuwen.wiki/InterfaceAdmin/Gadgets/src/branch/master/src/Gadgets/CollapsibleSidebar-gongbi>
- *
  * Author(s):
  * - AnYi
  *
