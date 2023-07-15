@@ -24,7 +24,6 @@
 		prev: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%232196f3' d='M30.9 43l3.1-3.1L18.1 24 34 8.1 30.9 5 12 24z'/%3E%3C/svg%3E"
 	};
 	const isSidebarCollapsed = document.documentElement.classList.contains('client-collapsedsidebar');
-	const sidebarButton = document.getElementById('sidebarButton');
 	const bodyWidth = (/android|ipad|iphone|mobile/i.test(navigator.userAgent) ?
 		(window.outerWidth > 0 ? window.outerWidth : document.body.offsetWidth) :
 		window.innerWidth > 0 ? window.innerWidth : document.body.offsetWidth
@@ -64,10 +63,6 @@
 		) ?? 0,
 		hide: () => {
 			document.getElementById('sidebarCollapse').src = images.prev;
-			document.getElementById('content').style.marginLeft = '';
-			document.getElementById('footer').style.marginLeft = '';
-			document.getElementById('left-navigation').style.marginLeft = '';
-			document.getElementById('mw-panel').style.display = 'none';
 			document.getElementById('sliderCollapseLogo').style.display = 'none';
 			document.getElementById('sliderCollapseLogo').style.left = '';
 			document.getElementById('sidebarCollapse').style.left =
@@ -75,10 +70,6 @@
 		},
 		show: () => {
 			document.getElementById('sidebarCollapse').src = images.next;
-			document.getElementById('content').style.marginLeft = '1em';
-			document.getElementById('footer').style.marginLeft = '1em';
-			document.getElementById('left-navigation').style.marginLeft = '10em';
-			document.getElementById('mw-panel').style.display = '';
 			document.getElementById('sliderCollapseLogo').style.display = 'block';
 			document.getElementById('sliderCollapseLogo').style.left = '2em';
 			document.getElementById('sidebarCollapse').style.left = '0.3em';
@@ -103,7 +94,7 @@
 			switchMode.show();
 		}
 	};
-	sidebarButton.addEventListener('click', () => {
+	sidebarCollapse.addEventListener('click', () => {
 		modeSwitcher();
 	});
 	/* Entry function */
