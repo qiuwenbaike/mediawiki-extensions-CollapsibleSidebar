@@ -13,14 +13,6 @@
 	}
 }
 
-/* Code for Vector Legacy */
-.skin-vector #sliderCollapseLogo {
-	position: absolute;
-	top: 3em;
-	width: 7em;
-	cursor: pointer;
-}
-
 @media screen {
 	#sidebarButton {
 		position: fixed;
@@ -33,7 +25,17 @@
 		-webkit-user-select: none;
 		user-select: none;
 	}
+}
 
+/* Code for Vector Legacy */
+.skin-vector #sliderCollapseLogo {
+	position: absolute;
+	top: 3em;
+	width: 7em;
+	cursor: pointer;
+}
+
+@media screen {
 	.skin-vector {
 		#sidebarCollapse {
 			position: fixed;
@@ -51,30 +53,24 @@
 	}
 }
 
-/* Code for Gongbi and Timeless */
-
-@media screen and ( min-width: 768px ) {
-	.skin-gongbi,
-	.skin-timeless {
-		&.client-collapsedsidebar {
-			#mw-related-navigation,
-			#mw-site-navigation {
-				display: none;
-			}
-
-			#mw-content {
-				border-left: 0 !important;
-				margin-left: 0 !important;
-			}
-		}
+@media screen and ( max-width: 768px ) {
+	#sidebarButton {
+		display: none !important;
 	}
 }
 
-@media screen and ( max-width: 768px ) {
-	.skin-gongbi,
-	.skin-timeless {
-		#sidebarButton {
-			display: none !important;
+/* Code for Gongbi and Timeless */
+
+@media screen and ( min-width: 768px ) {
+	.client-collapsedsidebar {
+		#mw-related-navigation,
+		#mw-site-navigation {
+			display: none;
+		}
+
+		#mw-content {
+			border-left: 0 !important;
+			margin-left: 0 !important;
 		}
 	}
 }
