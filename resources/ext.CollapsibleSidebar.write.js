@@ -21,15 +21,11 @@
 	const switchMode = {
 		hide: () => {
 			document.getElementById('content').parentElement.classList.add('col-md-12');
-			document.getElementById('content').parentElement.classList.add('col-xl-12');
 			document.getElementById('content').parentElement.classList.remove('col-md-9');
-			document.getElementById('content').parentElement.classList.remove('col-xl-10');
 		},
 		show: () => {
 			document.getElementById('content').parentElement.classList.add('col-md-9');
-			document.getElementById('content').parentElement.classList.add('col-xl-10');
 			document.getElementById('content').parentElement.classList.remove('col-md-12');
-			document.getElementById('content').parentElement.classList.remove('col-xl-12');
 		}
 	};
 	const checkSidebar = () => {
