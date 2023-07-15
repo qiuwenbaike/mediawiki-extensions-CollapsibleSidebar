@@ -11,9 +11,6 @@
  */
 'use strict';
 (() => {
-	if (![ 'write' ].includes(mw.config.get('skin'))) {
-		return;
-	}
 	const getCookie = (name) => ('; '
 		.concat(decodeURIComponent(document.cookie))
 		.split('; '.concat(name, '='))
