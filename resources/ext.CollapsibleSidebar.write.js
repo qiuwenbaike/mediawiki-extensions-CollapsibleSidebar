@@ -20,12 +20,10 @@
 	/* Code for Write */
 	const switchMode = {
 		hide: () => {
-			document.getElementById('content').parentElement.classList.add('col-md-12');
-			document.getElementById('content').parentElement.classList.remove('col-md-9');
+			document.getElementById('content').parentElement.classList = 'col-12 col-md-9 col-xl-10 py-md-3 px-md-5';
 		},
 		show: () => {
-			document.getElementById('content').parentElement.classList.add('col-md-9');
-			document.getElementById('content').parentElement.classList.remove('col-md-12');
+			document.getElementById('content').parentElement.classList = 'col-12 col-md-9 col-xl-10 py-md-3 px-md-5';
 		}
 	};
 	const checkSidebar = () => {
