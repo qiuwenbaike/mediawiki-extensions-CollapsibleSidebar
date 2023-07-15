@@ -25,7 +25,7 @@
 		"CollapsibleSidebar": ["i18n"]
 	},
 	"ResourceModules": {
-		"ext.CollapsibleSidebar.cookies": {
+		"ext.CollapsibleSidebar.cookie": {
 			"es6": true,
 			"packageFiles": ["ext.CollapsibleSidebar.cookie.js"]
 		},
