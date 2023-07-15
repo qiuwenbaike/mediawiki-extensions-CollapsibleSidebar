@@ -11,7 +11,6 @@
  */
 'use strict';
 (() => {
-	require('./ext.CollapsibleSidebar.cookie.js');
 	if (![ 'vector', 'gongbi', 'timeless', 'write' ].includes(mw.config.get('skin'))) {
 		return;
 	}

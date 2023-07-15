@@ -18,7 +18,7 @@ class Hooks implements
 	 */
 	public function onBeforePageDisplay($out, $skin): void
 	{
-		$out->addModules('ext.CollapsibleSidebar');
+		$out->addModules('ext.CollapsibleSidebar.js');
 		$out->addModuleStyles('ext.CollapsibleSidebar.styles');
 		if ($skin instanceof MediaWiki\Skins\Vector\SkinVector) {
 			$out->addModules('ext.CollapsibleSidebar.vector');

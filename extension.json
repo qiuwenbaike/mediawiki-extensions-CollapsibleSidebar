@@ -25,18 +25,20 @@
 		"CollapsibleSidebar": ["i18n"]
 	},
 	"ResourceModules": {
-		"ext.CollapsibleSidebar": {
+		"ext.CollapsibleSidebar.cookies": {
 			"es6": true,
-			"packageFiles": [
-				"ext.CollapsibleSidebar.cookie.js",
-				"ext.CollapsibleSidebar.js"
-			],
+			"packageFiles": ["ext.CollapsibleSidebar.cookie.js"]
+		},
+		"ext.CollapsibleSidebar.js": {
+			"es6": true,
+			"packageFiles": ["ext.CollapsibleSidebar.js"],
 			"messages": [
 				"collapsiblesidebar-collapse-link",
 				"collapsiblesidebar-collapse-link-tooltip",
 				"collapsiblesidebar-show-link",
 				"collapsiblesidebar-show-link-tooltip"
-			]
+			],
+			"dependencies": ["ext.CollapsibleSidebar.cookie"]
 		},
 		"ext.CollapsibleSidebar.write": {
 			"es6": true,
