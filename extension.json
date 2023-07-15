@@ -38,17 +38,9 @@
 		"ext.CollapsibleSidebar.styles": {
 			"styles": ["ext.CollapsibleSidebar.less"]
 		},
-		"ext.CollapsibleSidebar.write": {
-			"es6": true,
-			"packageFiles": ["ext.CollapsibleSidebar.write.js"]
-		},
 		"ext.CollapsibleSidebar.vector": {
 			"es6": true,
 			"packageFiles": ["ext.CollapsibleSidebar.vector.js"]
-		},
-		"ext.CollapsibleSidebar.vector-2022": {
-			"es6": true,
-			"packageFiles": ["ext.CollapsibleSidebar.vector-2022.js"]
 		}
 	},
 	"ResourceFileModulePaths": {
