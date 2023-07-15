@@ -48,12 +48,12 @@
 	sliderCollapseLogoLink.href = document.getElementsByClassName('mw-wiki-logo')[ 0 ].href;
 	sliderCollapseLogoLink.title = document.getElementsByClassName('mw-wiki-logo')[ 0 ].title;
 	const sliderCollapseLogo = document.createElement('img');
-	sidebarCollapse.id = 'sliderCollapseLogo';
-	sidebarCollapse.classList.add('mw-no-invert');
-	sidebarCollapse.src = images.logo;
-	sidebarCollapse.alt = document.getElementsByClassName('mw-wiki-logo')[ 0 ].title;
-	sidebarCollapse.title = document.getElementsByClassName('mw-wiki-logo')[ 0 ].title;
-	sidebarCollapse.style.display = isSidebarCollapsed ? '' : 'none';
+	sliderCollapseLogo.id = 'sliderCollapseLogo';
+	sliderCollapseLogo.classList.add('mw-no-invert');
+	sliderCollapseLogo.src = images.logo;
+	sliderCollapseLogo.alt = document.getElementsByClassName('mw-wiki-logo')[ 0 ].title;
+	sliderCollapseLogo.title = document.getElementsByClassName('mw-wiki-logo')[ 0 ].title;
+	sliderCollapseLogo.style.display = isSidebarCollapsed ? '' : 'none';
 	sliderCollapseLogoLink.appendChild(sliderCollapseLogo);
 	document.getElementById('mw-navigation').appendChild(sliderCollapseLogoLink);
 	/* Code for vector */
