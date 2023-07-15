@@ -87,18 +87,18 @@
 			sidebarButton.alt = mw.message('collapsiblesidebar-show-link');
 			sidebarButton.title = mw.message('collapsiblesidebar-show-link-tooltip');
 			document.getElementById('sidebarCollapse').src = images.next;
-			document.getElementById('sidebarCollapse').style.left =
-				(switchMode.bodyWidth >= 982) ? '10.3em' : '9.3em';
+			document.getElementById('sidebarCollapse').style.left = '0.3em';
 		},
 		show: () => {
-			document.getElementById('sidebarCollapse').src = images.prev;
-			document.getElementById('sidebarCollapse').style.left = '0.3em';
 			document.documentElement.classList.remove('client-collapsedsidebar');
 			setCookie(cookieName, '1', '-1');
 			setCookie(cookieName, '0', 1e9);
 			sidebarButton.src = images.hideSidebarButtonIcon;
 			sidebarButton.alt = mw.message('collapsiblesidebar-hide-link');
 			sidebarButton.title = mw.message('collapsiblesidebar-hide-link-tooltip');
+			document.getElementById('sidebarCollapse').src = images.prev;
+			document.getElementById('sidebarCollapse').style.left =
+				(switchMode.bodyWidth >= 982) ? '10.3em' : '9.3em';
 		}
 	};
 	const checkSidebar = () => {
