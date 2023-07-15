@@ -25,6 +25,10 @@
 	};
 	const isSidebarCollapsed = document.documentElement.classList.contains('client-collapsedsidebar');
 	const sidebarButton = document.getElementById('sidebarButton');
+	const bodyWidth = (/android|ipad|iphone|mobile/i.test(navigator.userAgent) ?
+		(window.outerWidth > 0 ? window.outerWidth : document.body.offsetWidth) :
+		window.innerWidth > 0 ? window.innerWidth : document.body.offsetWidth
+	) ?? 0;
 	/* sidebarCollapse */
 	const sidebarCollapse = document.createElement('img');
 	sidebarCollapse.id = 'sidebarCollapse';
@@ -36,7 +40,22 @@
 	sidebarCollapse.title = isSidebarCollapsed ?
 		mw.message('collapsiblesidebar-show-link-tooltip') :
 		mw.message('collapsiblesidebar-hide-link-tooltip');
+	sidebarCollapse.style.left = isSidebarCollapsed ? '0.3em' :
+		(bodyWidth >= 982) ? '10.3em' : '9.3em';
 	document.body.appendChild(sidebarCollapse);
+	/* sliderCollapseLogo */
+	const sliderCollapseLogoLink = document.createElement('a');
+	sliderCollapseLogoLink.href = document.getElementsByClassName('mw-wiki-logo')[ 0 ].href;
+	sliderCollapseLogoLink.title = document.getElementsByClassName('mw-wiki-logo')[ 0 ].title;
+	const sliderCollapseLogo = document.createElement('img');
+	sidebarCollapse.id = 'sliderCollapseLogo';
+	sidebarCollapse.classList.add('mw-no-invert');
+	sidebarCollapse.src = images.logo;
+	sidebarCollapse.alt = document.getElementsByClassName('mw-wiki-logo')[ 0 ].title;
+	sidebarCollapse.title = document.getElementsByClassName('mw-wiki-logo')[ 0 ].title;
+	sidebarCollapse.style.display = isSidebarCollapsed ? '' : 'none';
+	sliderCollapseLogoLink.appendChild(sliderCollapseLogo);
+	document.getElementById('mw-navigation').appendChild(sliderCollapseLogoLink);
 	/* Code for vector */
 	const switchMode = {
 		bodyWidth: (/android|ipad|iphone|mobile/i.test(navigator.userAgent) ?
@@ -52,7 +71,7 @@
 			document.getElementById('sliderCollapseLogo').style.display = 'none';
 			document.getElementById('sliderCollapseLogo').style.left = '';
 			document.getElementById('sidebarCollapse').style.left =
-				(switchMode.bodyWidth >= 982) ? '10.3em' : '9.3em';
+				(bodyWidth >= 982) ? '10.3em' : '9.3em';
 		},
 		show: () => {
 			document.getElementById('sidebarCollapse').src = images.next;
