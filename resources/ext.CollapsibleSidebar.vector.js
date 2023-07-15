@@ -67,7 +67,7 @@
 			document.getElementById('content').style.marginLeft = '';
 			document.getElementById('footer').style.marginLeft = '';
 			document.getElementById('left-navigation').style.marginLeft = '';
-			document.getElementById('mw-panel').style.display = '';
+			document.getElementById('mw-panel').style.display = 'none';
 			document.getElementById('sliderCollapseLogo').style.display = 'none';
 			document.getElementById('sliderCollapseLogo').style.left = '';
 			document.getElementById('sidebarCollapse').style.left =
@@ -78,7 +78,7 @@
 			document.getElementById('content').style.marginLeft = '1em';
 			document.getElementById('footer').style.marginLeft = '1em';
 			document.getElementById('left-navigation').style.marginLeft = '10em';
-			document.getElementById('mw-panel').style.display = 'none';
+			document.getElementById('mw-panel').style.display = '';
 			document.getElementById('sliderCollapseLogo').style.display = 'block';
 			document.getElementById('sliderCollapseLogo').style.left = '2em';
 			document.getElementById('sidebarCollapse').style.left = '0.3em';
