@@ -18,7 +18,7 @@ class Hooks implements
 	 */
 	public function onBeforePageDisplay($out, $skin): void
 	{
-		$requiredSkins = ['vector', 'write', 'gongbi', 'timeless', 'vector-2022'];
+		$requiredSkins = ['vector', 'vector-2022', 'write', 'gongbi', 'timeless'];
 		if (
 			in_array($skin->getSkinName(), $requiredSkins)
 		) {
@@ -31,7 +31,7 @@ class Hooks implements
 					$out->addModules('ext.CollapsibleSidebar.write');
 				}
 				if ($skin->getSkinName() === 'vector-2022') {
-					$out->addModules('ext.CollapsibleSidebar.write');
+					$out->addModules('ext.CollapsibleSidebar.vector-2022');
 				}
 			}
 			if ($this->isSidebarCollapsed()) {
