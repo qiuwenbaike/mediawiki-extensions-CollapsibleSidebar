@@ -29,8 +29,8 @@
 			"es6": true,
 			"packageFiles": ["ext.CollapsibleSidebar.js"],
 			"messages": [
-				"collapsiblesidebar-collapse-link",
-				"collapsiblesidebar-collapse-link-tooltip",
+				"collapsiblesidebar-hide-link",
+				"collapsiblesidebar-hide-link-tooltip",
 				"collapsiblesidebar-show-link",
 				"collapsiblesidebar-show-link-tooltip"
 			]

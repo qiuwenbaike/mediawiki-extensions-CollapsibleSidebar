@@ -92,8 +92,8 @@
 			setCookie(cookieName, '1', '-1');
 			setCookie(cookieName, '0', 1e9);
 			sidebarButton.src = images.hideSidebarButtonIcon;
-			sidebarButton.alt = mw.message('collapsiblesidebar-collapse-link');
-			sidebarButton.title = mw.message('collapsiblesidebar-collapse-link-tooltip');
+			sidebarButton.alt = mw.message('collapsiblesidebar-hide-link');
+			sidebarButton.title = mw.message('collapsiblesidebar-hide-link-tooltip');
 		}
 	};
 	const checkSidebar = () => {

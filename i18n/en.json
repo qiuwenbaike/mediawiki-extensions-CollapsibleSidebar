@@ -3,8 +3,8 @@
 		"authors": [ "WaitSpring" ]
 	},
 	"collapsiblesidebar-desc": "Collapsible sidebar for MediaWiki UI",
-	"collapsiblesidebar-collapse-link": "Hide sidebars",
-	"collapsiblesidebar-collapse-link-tooltip": "Hide sidebars",
+	"collapsiblesidebar-hide-link": "Hide sidebars",
+	"collapsiblesidebar-hide-link-tooltip": "Hide sidebars",
 	"collapsiblesidebar-show-link": "Show sidebars",
 	"collapsiblesidebar-show-link-tooltip": "Show sidebars"
 }

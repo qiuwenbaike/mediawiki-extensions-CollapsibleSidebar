@@ -3,8 +3,8 @@
 		"authors": [ "WaitSpring" ]
 	},
 	"CollapsibleSidebar-desc": "MediaWiki用户界面的可切换侧边栏",
-	"collapsiblesidebar-collapse-link": "隐藏侧边栏",
-	"collapsiblesidebar-collapse-link-tooltip": "隐藏侧边栏",
+	"collapsiblesidebar-hide-link": "隐藏侧边栏",
+	"collapsiblesidebar-hide-link-tooltip": "隐藏侧边栏",
 	"collapsiblesidebar-show-link": "显示侧边栏",
 	"collapsiblesidebar-show-link-tooltip": "显示侧边栏"
 }
