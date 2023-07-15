@@ -123,6 +123,9 @@
 	sidebarCollapse.addEventListener('click', () => {
 		modeSwitcher();
 	});
+	sidebarButton.addEventListener('click', () => {
+		modeSwitcher();
+	});
 	/* Entry function */
 	checkSidebar();
 })();
