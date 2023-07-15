@@ -71,7 +71,7 @@
 			document.getElementById('sliderCollapseLogo').style.display = 'none';
 			document.getElementById('sliderCollapseLogo').style.left = '';
 			document.getElementById('sidebarCollapse').style.left =
-				(bodyWidth >= 982) ? '10.3em' : '9.3em';
+				(switchMode.bodyWidth >= 982) ? '10.3em' : '9.3em';
 		},
 		show: () => {
 			document.getElementById('sidebarCollapse').src = images.next;
