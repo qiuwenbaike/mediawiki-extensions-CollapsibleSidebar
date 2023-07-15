@@ -30,12 +30,14 @@
 }
 
 /* Rules for Vector Legacy */
-.skin-vector #sliderCollapseLogo {
-	position: absolute;
-	top: 3em;
-	display: none;
-	width: 7em;
-	cursor: pointer;
+.skin-vector:not( .skin-vector-2022 ) {
+	#sliderCollapseLogo {
+		position: absolute;
+		top: 3em;
+		display: none;
+		width: 7em;
+		cursor: pointer;
+	}
 }
 
 .client-collapsedsidebar {
@@ -86,14 +88,17 @@
 
 @media screen and ( min-width: 768px ) {
 	.client-collapsedsidebar {
-		#mw-related-navigation,
-		#mw-site-navigation {
-			display: none;
-		}
+		.skin-gongbi,
+		.skin-timeless {
+			#mw-related-navigation,
+			#mw-site-navigation {
+				display: none;
+			}
 
-		#mw-content {
-			border-left: 0 !important;
-			margin-left: 0 !important;
+			#mw-content {
+				border-left: 0 !important;
+				margin-left: 0 !important;
+			}
 		}
 	}
 }
@@ -101,12 +106,14 @@
 /* Rules for Write */
 @media screen and ( min-width: 768px ) {
 	.client-collapsedsidebar {
-		#mw-navigation {
-			display: none;
-		}
+		.skin-write {
+			#mw-navigation {
+				display: none;
+			}
 
-		.col-12 {
-			margin: auto;
+			.col-12 {
+				margin: auto;
+			}
 		}
 	}
 }
