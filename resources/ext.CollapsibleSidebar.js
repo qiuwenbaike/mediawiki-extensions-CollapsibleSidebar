@@ -77,7 +77,8 @@
 			document.documentElement.classList.add('client-collapsedsidebar');
 			if (mw.config.get('skin') === 'vector-2022') {
 				document.documentElement.classList.add('skin-vector-disable-max-width');
-			} else if (mw.config.get('skin') === 'write') {
+			}
+			if (mw.config.get('skin') === 'write') {
 				document.getElementById('content').parentElement.classList.remove('col-xl-10');
 				document.getElementById('content').parentElement.classList.add('col-xl-12');
 			}
@@ -91,7 +92,8 @@
 			document.documentElement.classList.remove('client-collapsedsidebar');
 			if (mw.config.get('skin') === 'vector-2022') {
 				document.documentElement.classList.remove('skin-vector-disable-max-width');
-			} else if (mw.config.get('skin') === 'write') {
+			}
+			if (mw.config.get('skin') === 'write') {
 				document.getElementById('content').parentElement.classList.add('col-xl-10');
 				document.getElementById('content').parentElement.classList.remove('col-xl-12');
 			}
