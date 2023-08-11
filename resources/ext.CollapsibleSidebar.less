@@ -122,14 +122,16 @@
 @media screen {
 	.client-collapsedsidebar {
 		.skin-citizen {
-			&.ns-0 {
+			&:not( .ns--1 ):not( .ns-6 ):not( .ns-14 ) {
 				--width-layout: var( --width-layout--extended );
 			}
 		}
 	}
 
 	.skin-citizen {
-		&:not( .ns-0 ) {
+		.ns--1,
+		.ns-6,
+		.ns-14 {
 			#sidebarButton {
 				display: none !important;
 			}
