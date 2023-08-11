@@ -122,27 +122,17 @@
 @media screen {
 	.client-collapsedsidebar {
 		.skin-citizen {
-			--width-layout: var( --width-layout--extended );
+			&.ns-0 {
+				--width-layout: var( --width-layout--extended );
+			}
 		}
 	}
 
-	.ns--1,
-	.ns-2,
-	.ns-4,
-	.ns-6,
-	.ns-8,
-	.ns-10,
-	.ns-12,
-	.ns-14,
-	.ns-828,
-	.ns-talk {
+	:not( .ns-0 ) {
 		#sidebarButton {
 			display: none !important;
 		}
 	}
-
-	--width-layout: 1080px;
-	--width-layout--extended: calc( var( --width-layout ) * 1.5 );
 }
 
 @media screen and ( max-width: 1300px ) {
