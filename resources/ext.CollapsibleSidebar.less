@@ -119,10 +119,22 @@
 }
 
 /* Rules for Citizen */
-@media screen and ( min-width: 1200px ) {
+@media screen and ( min-width: 1300px ) {
 	.client-collapsedsidebar {
 		.skin-citizen {
 			--width-layout: var( --width-layout--extended );
+		}
+	}
+
+	.ns-2,
+	.ns-4,
+	.ns-8,
+	.ns-10,
+	.ns-12,
+	.ns-828,
+	.ns-talk {
+		#sidebarButton {
+			display: none !important;
 		}
 	}
 
@@ -130,7 +142,7 @@
 	--width-layout--extended: calc( var( --width-layout ) * 1.5 );
 }
 
-@media screen and ( max-width: 1200px ) {
+@media screen and ( max-width: 1300px ) {
 	.skin-citizen {
 		#sidebarButton {
 			display: none !important;
