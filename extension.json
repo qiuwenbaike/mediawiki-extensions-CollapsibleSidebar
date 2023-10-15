@@ -2,7 +2,7 @@
 	"name": "CollapsibleSidebar",
 	"version": "0.4.1",
 	"author": ["MusikAnimal", "R4356th", "AnYi", "WaitSpring"],
-	"url": "https://git.qiuwen.wiki/Fork/mediawiki-extensions-CollapsibleSidebar",
+	"url": "https://git.qiuwen.net.cn/Fork/mediawiki-extensions-CollapsibleSidebar",
 	"descriptionmsg": "collapsiblesidebar-desc",
 	"license-name": "GPL-3.0",
 	"type": "other",
