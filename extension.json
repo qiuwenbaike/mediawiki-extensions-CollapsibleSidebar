@@ -1,7 +1,7 @@
 {
 	"name": "CollapsibleSidebar",
 	"version": "0.4.1",
-	"author": ["MusikAnimal", "R4356th", "AnYi", "WaitSpring"],
+	"author": [ "MusikAnimal", "R4356th", "AnYi", "WaitSpring" ],
 	"url": "https://git.qiuwen.net.cn/Fork/mediawiki-extensions-CollapsibleSidebar",
 	"descriptionmsg": "collapsiblesidebar-desc",
 	"license-name": "GPL-3.0",
@@ -18,16 +18,16 @@
 	"HookHandlers": {
 		"main": {
 			"class": "MediaWiki\\Extension\\CollapsibleSidebar\\Hooks",
-			"services": ["MainConfig"]
+			"services": [ "MainConfig" ]
 		}
 	},
 	"MessagesDirs": {
-		"CollapsibleSidebar": ["i18n"]
+		"CollapsibleSidebar": [ "i18n" ]
 	},
 	"ResourceModules": {
 		"ext.CollapsibleSidebar.js": {
 			"es6": true,
-			"packageFiles": ["ext.CollapsibleSidebar.js"],
+			"packageFiles": [ "ext.CollapsibleSidebar.js" ],
 			"messages": [
 				"collapsiblesidebar-hide-link",
 				"collapsiblesidebar-hide-link-tooltip",
@@ -37,7 +37,7 @@
 		},
 		"ext.CollapsibleSidebar.vector": {
 			"es6": true,
-			"packageFiles": ["ext.CollapsibleSidebar.vector.js"],
+			"packageFiles": [ "ext.CollapsibleSidebar.vector.js" ],
 			"messages": [
 				"collapsiblesidebar-hide-link",
 				"collapsiblesidebar-hide-link-tooltip",
@@ -46,7 +46,7 @@
 			]
 		},
 		"ext.CollapsibleSidebar.styles": {
-			"styles": ["ext.CollapsibleSidebar.less"]
+			"styles": [ "ext.CollapsibleSidebar.less" ]
 		}
 	},
 	"ResourceFileModulePaths": {
