@@ -26,7 +26,6 @@
 	},
 	"ResourceModules": {
 		"ext.CollapsibleSidebar.js": {
-			"es6": true,
 			"packageFiles": [ "ext.CollapsibleSidebar.js" ],
 			"messages": [
 				"collapsiblesidebar-hide-link",
@@ -36,7 +35,6 @@
 			]
 		},
 		"ext.CollapsibleSidebar.vector": {
-			"es6": true,
 			"packageFiles": [ "ext.CollapsibleSidebar.vector.js" ],
 			"messages": [
 				"collapsiblesidebar-hide-link",
