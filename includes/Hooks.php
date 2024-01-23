@@ -18,7 +18,7 @@ class Hooks implements
 	 */
 	public function onBeforePageDisplay($out, $skin): void
 	{
-		$requiredSkins = ['vector', 'vector-2022', 'write', 'gongbi', 'timeless', 'citizen'];
+		$requiredSkins = ['vector', 'write', 'gongbi', 'timeless', 'citizen'];
 		if (
 			in_array($skin->getSkinName(), $requiredSkins)
 		) {
