@@ -26,7 +26,7 @@
 	button.alt = IS_COLLAPSED ? message('show-link') : message('hide-link');
 	button.title = IS_COLLAPSED ? message('show-link-tooltip') : message('hide-link-tooltip');
 	button.style.opacity = '0.7';
-	button.style.bottom = '162px';
+	button.style.bottom = '169px';
 	/* add EventListener to button */
 	var eventTargetFunction = function (event) {
 		button.style.opacity = event.type === 'mouseenter' ? '1' : '0.7';
@@ -38,7 +38,7 @@
 	var eventFunc = function () {
 		button.style.bottom = (document.getElementById('cat_a_lot') ||
 			document.getElementById('proveit') ||
-			document.getElementsByClassName('wordcount')[ 0 ]) ? '206px' : '162px';
+			document.getElementsByClassName('wordcount')[ 0 ]) ? '213px' : '169px';
 	};
 	window.addEventListener('scroll', eventFunc);
 	window.addEventListener('selectionchange', eventFunc);
