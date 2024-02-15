@@ -30,9 +30,6 @@ class Hooks implements
 			}
 			if ($this->isSidebarCollapsed()) {
 				$out->addHtmlClasses('client-collapsedsidebar');
-				if ($skin->getSkinName() === 'vector-2022') {
-					$out->addHtmlClasses('skin-vector-disable-max-width');
-				}
 			}
 		}
 	}
