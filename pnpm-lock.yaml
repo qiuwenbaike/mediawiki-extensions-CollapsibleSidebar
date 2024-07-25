@@ -21,8 +21,8 @@ importers:
         specifier: 24.0.1
         version: 24.0.1(grunt@1.6.1)
       grunt-stylelint:
-        specifier: 0.18.0
-        version: 0.18.0(stylelint@16.7.0(typescript@5.3.3))
+        specifier: 0.20.1
+        version: 0.20.1(stylelint@16.7.0(typescript@5.3.3))
       postcss-less:
         specifier: ^6.0.0
         version: 6.0.0(postcss@8.4.40)
@@ -897,11 +897,11 @@ packages:
     resolution: {integrity: sha512-2bQiD4fzXqX8rhNdXkAywCadeqiPiay0oQny77wA2F3WF4grPJXCvAcyoWUJV+po/b15glGkxuSiQCK299UC2w==}
     engines: {node: '>=10'}
 
-  grunt-stylelint@0.18.0:
-    resolution: {integrity: sha512-Ks5OfRUCA6E1v5PkCQKYaMErHtoec/Ub0Vb1xvZ0CKm/1zzWKuqEu2ZVtFcQVDqrC5UM6AXaLHpsLiocVKAgbg==}
-    engines: {node: '>=12'}
+  grunt-stylelint@0.20.1:
+    resolution: {integrity: sha512-tDep9ceEerB+fK6CkzPBXu5qPM7RuwCRgfrtwugEyYYnxINreMZktqQU5eoTW+MhhFj81uWQQnxf+c4geyAmQg==}
+    engines: {node: '>=18.12.0'}
     peerDependencies:
-      stylelint: 14.x
+      stylelint: 16.x
 
   grunt@1.6.1:
     resolution: {integrity: sha512-/ABUy3gYWu5iBmrUSRBP97JLpQUm0GgVveDCp6t3yRNIoltIYw7rEj3g5y1o2PGPR2vfTRGa7WC/LZHLTXnEzA==}
@@ -2761,7 +2761,7 @@ snapshots:
       underscore.string: 3.3.6
       which: 2.0.2
 
-  grunt-stylelint@0.18.0(stylelint@16.7.0(typescript@5.3.3)):
+  grunt-stylelint@0.20.1(stylelint@16.7.0(typescript@5.3.3)):
     dependencies:
       chalk: 4.1.2
       stylelint: 16.7.0(typescript@5.3.3)
