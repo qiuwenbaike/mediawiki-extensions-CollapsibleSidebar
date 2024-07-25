@@ -78,7 +78,7 @@
 	}
 }
 
-@media screen and ( max-width: 768px ) {
+@media screen and (max-width: 768px) {
 	#sidebarButton {
 		display: none !important;
 	}
@@ -86,7 +86,7 @@
 
 /* Rules for Gongbi and Timeless */
 
-@media screen and ( min-width: 768px ) {
+@media screen and (min-width: 768px) {
 	.client-collapsedsidebar {
 		.skin-gongbi,
 		.skin-timeless {
@@ -104,7 +104,7 @@
 }
 
 /* Rules for Write */
-@media screen and ( min-width: 768px ) {
+@media screen and (min-width: 768px) {
 	.client-collapsedsidebar {
 		.skin-write {
 			#mw-navigation {
@@ -122,16 +122,24 @@
 @media screen {
 	.client-collapsedsidebar {
 		.skin-citizen {
-			&:not( .ns--1 ):not( .ns-6 ):not( .ns-14 ) {
-				--width-layout: var( --width-layout--extended );
+			&:not(.ns--1):not(.ns-2):not(.ns-4):not(.ns-6):not(.ns-8):not(
+					.ns-10
+				):not(.ns-12):not(.ns-14):not(.ns-828) {
+				--width-layout: var(--width-layout--extended);
 			}
 		}
 	}
 
 	.skin-citizen {
 		&.ns--1,
+		&.ns-2,
+		&.ns-4,
 		&.ns-6,
-		&.ns-14 {
+		&.ns-8,
+		&.ns-10,
+		&.ns-12,
+		&.ns-14,
+		&.ns-828 {
 			#sidebarButton {
 				display: none !important;
 			}
@@ -139,7 +147,7 @@
 	}
 }
 
-@media screen and ( max-width: 1300px ) {
+@media screen and (max-width: 1300px) {
 	.skin-citizen {
 		#sidebarButton {
 			display: none !important;
