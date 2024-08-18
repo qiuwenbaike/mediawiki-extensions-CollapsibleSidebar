@@ -25,6 +25,7 @@ class Hooks implements
 			$out->addModuleStyles('ext.CollapsibleSidebar.styles');
 			if ($skin->getSkinName() === 'vector') {
 				$out->addModules('ext.CollapsibleSidebar.vector');
+				$out->addModuleStyles('ext.CollapsibleSidebar.vector.styles');
 			} else {
 				$out->addModules('ext.CollapsibleSidebar.js');
 			}

@@ -1,0 +1,61 @@
+/**
+ * collapsibleSidebar
+ *
+ * Author(s):
+ * - AnYi
+ *
+ * Rewrite by WaitSpring
+ */
+
+/* Rules for Vector Legacy */
+
+/* Rules for print media */
+@media print {
+	#sidebarCollapse {
+		display: none !important;
+	}
+}
+
+.skin-vector {
+	#sliderCollapseLogo {
+		position: absolute;
+		top: 3em;
+		display: none;
+		width: 7em;
+		cursor: pointer;
+	}
+
+	.client-collapsedsidebar & {
+		#mw-panel {
+			display: none;
+		}
+
+		#sliderCollapseLogo {
+			top: 0.5em;
+			left: 1em;
+			display: block;
+		}
+
+		#content,
+		#footer,
+		#left-navigation {
+			margin-left: 1em;
+		}
+	}
+
+	@media screen {
+		#sidebarCollapse {
+			position: fixed;
+			top: 5.625em;
+			width: 0.8em;
+			padding: 0.3em;
+			border: 1px solid #a7d7f9;
+			border-radius: 50px;
+			background: #fff;
+			cursor: pointer;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			user-select: none;
+		}
+	}
+}

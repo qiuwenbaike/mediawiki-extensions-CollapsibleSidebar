@@ -26,7 +26,7 @@
 	},
 	"ResourceModules": {
 		"ext.CollapsibleSidebar.js": {
-			"packageFiles": [ "ext.CollapsibleSidebar.js" ],
+			"scripts": [ "ext.CollapsibleSidebar.js" ],
 			"messages": [
 				"collapsiblesidebar-hide-link",
 				"collapsiblesidebar-hide-link-tooltip",
@@ -35,16 +35,22 @@
 			]
 		},
 		"ext.CollapsibleSidebar.vector": {
-			"packageFiles": [ "ext.CollapsibleSidebar.vector.js" ],
+			"scripts": [ "ext.CollapsibleSidebar.vector.js" ],
 			"messages": [
 				"collapsiblesidebar-hide-link",
 				"collapsiblesidebar-hide-link-tooltip",
 				"collapsiblesidebar-show-link",
 				"collapsiblesidebar-show-link-tooltip"
-			]
+			],
+			"targets": [ "desktop", "mobile" ]
 		},
 		"ext.CollapsibleSidebar.styles": {
-			"styles": [ "ext.CollapsibleSidebar.less" ]
+			"styles": [ "ext.CollapsibleSidebar.less" ],
+			"targets": [ "desktop", "mobile" ]
+		},
+		"ext.CollapsibleSidebar.vector.styles": {
+			"styles": [ "ext.CollapsibleSidebar.vector.less" ],
+			"targets": [ "desktop", "mobile" ]
 		}
 	},
 	"ResourceFileModulePaths": {
