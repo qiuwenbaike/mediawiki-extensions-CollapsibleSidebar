@@ -9,11 +9,15 @@
 
 /* General Rules */
 
+/* Rules for print media */
+
 @media print {
 	#sidebarButton {
 		display: none !important;
 	}
 }
+
+/* Rules for screen media */
 
 @media screen {
 	#sidebarButton {
@@ -29,65 +33,17 @@
 	}
 }
 
-/* Rules for Vector Legacy */
-.skin-vector {
-	#sliderCollapseLogo {
-		position: absolute;
-		top: 3em;
-		display: none;
-		width: 7em;
-		cursor: pointer;
-	}
-}
-
-.client-collapsedsidebar {
-	.skin-vector {
-		#mw-panel {
-			display: none;
-		}
-
-		#sliderCollapseLogo {
-			top: 0.5em;
-			left: 1em;
-			display: block;
-		}
-
-		#content,
-		#footer,
-		#left-navigation {
-			margin-left: 1em;
-		}
-	}
-}
-
-@media screen {
-	.skin-vector {
-		#sidebarCollapse {
-			position: fixed;
-			top: 5.625em;
-			width: 0.8em;
-			padding: 0.3em;
-			border: 1px solid #a7d7f9;
-			border-radius: 50px;
-			background: #fff;
-			cursor: pointer;
-			-moz-user-select: none;
-			-webkit-user-select: none;
-			user-select: none;
-		}
-	}
-}
-
 @media screen and ( max-width: 768px ) {
 	#sidebarButton {
 		display: none !important;
 	}
 }
 
-/* Rules for Gongbi and Timeless */
+/* Rules for specific skins */
 
 @media screen and ( min-width: 768px ) {
 	.client-collapsedsidebar {
+		/* Rules for Gongbi and Timeless */
 		.skin-gongbi,
 		.skin-timeless {
 			#mw-related-navigation,
@@ -101,12 +57,8 @@
 				margin-left: 0 !important;
 			}
 		}
-	}
-}
 
-/* Rules for Write */
-@media screen and ( min-width: 768px ) {
-	.client-collapsedsidebar {
+		/* Rules for Write */
 		.skin-write {
 			#mw-navigation {
 				display: none;
