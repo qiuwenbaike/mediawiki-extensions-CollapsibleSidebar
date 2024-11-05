@@ -10,7 +10,7 @@
 		'wgCanonicalSpecialPageName'
 	);
 	var skin = mw.config.get('skin');
-	if (wgCanonicalSpecialPageName === 'ApiHelp' || skin === 'vector-2022') {
+	if (wgCanonicalSpecialPageName === 'ApiHelp' || skin === 'vector-2022' || skin === 'ctizen') {
 		return;
 	}
 

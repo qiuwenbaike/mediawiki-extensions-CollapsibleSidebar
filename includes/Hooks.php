@@ -20,18 +20,21 @@ class Hooks implements
 	{
 		$requiredSkins = ['vector', 'write', 'gongbi', 'timeless'];
 		if (
-			in_array($skin->getSkinName(), $requiredSkins)
+			!in_array($skin->getSkinName(), $requiredSkins)
 		) {
+			return;
+		}
+
+		if ($skin->getSkinName() === 'vector') {
+			$out->addModules('ext.CollapsibleSidebar.vector');
+			$out->addModuleStyles('ext.CollapsibleSidebar.vector.styles');
 			$out->addModuleStyles('ext.CollapsibleSidebar.styles');
-			if ($skin->getSkinName() === 'vector') {
-				$out->addModules('ext.CollapsibleSidebar.vector');
-				$out->addModuleStyles('ext.CollapsibleSidebar.vector.styles');
-			} else {
-				$out->addModules('ext.CollapsibleSidebar.js');
-			}
-			if ($this->isSidebarCollapsed()) {
-				$out->addHtmlClasses('client-collapsedsidebar');
-			}
+		} else {
+			$out->addModules('ext.CollapsibleSidebar.js');
+			$out->addModuleStyles('ext.CollapsibleSidebar.styles');
+		}
+		if ($this->isSidebarCollapsed()) {
+			$out->addHtmlClasses('client-collapsedsidebar');
 		}
 	}
 
