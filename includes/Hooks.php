@@ -33,6 +33,7 @@ class Hooks implements
 			$out->addModules('ext.CollapsibleSidebar.js');
 			$out->addModuleStyles('ext.CollapsibleSidebar.styles');
 		}
+
 		if ($this->isSidebarCollapsed()) {
 			$out->addHtmlClasses('client-collapsedsidebar');
 		}
