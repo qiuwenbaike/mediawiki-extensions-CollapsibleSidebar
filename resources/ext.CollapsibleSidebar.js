@@ -4,8 +4,8 @@
  * @author 安忆 <i@anyi.in>, WaitSpring
  * @license GPL-3.0
  */
-
-(function () {
+'use strict';
+document.addEventListener('DOMContentLoaded', () => {
 	const wgCanonicalSpecialPageName = mw.config.get(
 		'wgCanonicalSpecialPageName'
 	);
@@ -156,4 +156,4 @@
 	});
 
 	checkSidebar(); // Entry function
-}());
+});
