@@ -5,7 +5,7 @@
  * @license GPL-3.0
  */
 'use strict';
-document.addEventListener('DOMContentLoaded', () => {
+(() => {
 	const wgCanonicalSpecialPageName = mw.config.get(
 		'wgCanonicalSpecialPageName'
 	);
@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	const WIKI_LOGO = document.getElementsByClassName('mw-wiki-logo')[ 0 ];
 	const OUTER_WIDTH = window.outerWidth;
 	const INNER_WIDTH = window.innerWidth;
-	const OFFSET_WIDTH = document.body.offsetWidth;
+	const OFFSET_WIDTH = (document.body ?? document.documentElement)
+		.offsetWidth;
 	const BODY_WIDTH = function () {
 		return (
 			(/android|ipad|iphone|mobile/i.test(navigator.userAgent) ?
@@ -56,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		BODY_WIDTH() < 982 ?
 			'9.3em' :
 			'10.3em';
-	document.body.appendChild(icon);
+	(document.body ?? document.documentElement).appendChild(icon);
 
 	const iconLink = document.createElement('a');
 	iconLink.href = WIKI_LOGO.href;
@@ -157,4 +158,4 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	checkSidebar(); // Entry function
-});
+})();

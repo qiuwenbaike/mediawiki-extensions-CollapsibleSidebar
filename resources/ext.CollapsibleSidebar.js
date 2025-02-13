@@ -5,7 +5,7 @@
  * @license GPL-3.0
  */
 'use strict';
-document.addEventListener('DOMContentLoaded', () => {
+(() => {
 	const wgCanonicalSpecialPageName = mw.config.get(
 		'wgCanonicalSpecialPageName'
 	);
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 	button.addEventListener('mouseenter ', eventTargetFunction);
 	button.addEventListener('mouseleave', eventTargetFunction);
-	document.body.appendChild(button);
+	(document.body ?? document.documentElement).appendChild(button);
 
 	const eventFunc = function () {
 		button.style.bottom =
@@ -156,4 +156,4 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	checkSidebar(); // Entry function
-});
+})();
