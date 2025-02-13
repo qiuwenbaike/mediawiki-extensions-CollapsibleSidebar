@@ -26,7 +26,7 @@
 	},
 	"ResourceModules": {
 		"ext.CollapsibleSidebar.js": {
-			"scripts": [ "ext.CollapsibleSidebar.js" ],
+			"packageFiles": [ "ext.CollapsibleSidebar.js" ],
 			"messages": [
 				"collapsiblesidebar-hide-link",
 				"collapsiblesidebar-hide-link-tooltip",
@@ -35,7 +35,7 @@
 			]
 		},
 		"ext.CollapsibleSidebar.vector": {
-			"scripts": [ "ext.CollapsibleSidebar.vector.js" ],
+			"packageFiles": [ "ext.CollapsibleSidebar.vector.js" ],
 			"messages": [
 				"collapsiblesidebar-hide-link",
 				"collapsiblesidebar-hide-link-tooltip",
