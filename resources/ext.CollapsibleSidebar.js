@@ -44,16 +44,16 @@
 	button.addEventListener('mouseleave', eventTargetFunction);
 	(document.body ?? document.documentElement).appendChild(button);
 
-	const eventFunc = function () {
+	const windowEventFunction = function windowEventFunction() {
 		button.style.bottom =
-			document.getElementById('cat_a_lot') ||
 			document.getElementById('proveit') ||
-			document.getElementsByClassName('wordcount')[ 0 ] ?
+			document.getElementsByClassName('gadget-cat_a_lot-container')[ 0 ] ||
+			document.getElementById('gadget-word_count-tip') ?
 				'213px' :
 				'169px';
 	};
-	window.addEventListener('scroll', eventFunc);
-	window.addEventListener('selectionchange', eventFunc);
+	window.addEventListener('scroll', windowEventFunction);
+	window.addEventListener('selectionchange', windowEventFunction);
 
 	const getCookie = function (name) {
 		return '; '
