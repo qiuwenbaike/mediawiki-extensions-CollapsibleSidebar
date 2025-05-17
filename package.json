@@ -1,6 +1,7 @@
 {
 	"name": "collapsiblesidebar",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"test": "grunt test",
 		"eslint": "eslint .",
