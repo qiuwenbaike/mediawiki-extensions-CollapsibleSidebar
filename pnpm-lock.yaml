@@ -18,7 +18,7 @@ importers:
         specifier: ^0.30.0
         version: 0.30.0(typescript@5.3.3)
       globals:
-        specifier: ^16.1.0
+        specifier: ^16.2.0
         version: 16.2.0
       grunt:
         specifier: 1.6.1
