@@ -37,9 +37,12 @@
 					OFFSET_WIDTH) || 0
 		);
 	};
-	const IS_COLLAPSED = document.documentElement.classList.contains(
-		'client-collapsedsidebar'
-	);
+	const checkSidebarIsHidden = function () {
+		return document.documentElement.classList.contains(
+			'client-collapsedsidebar'
+		);
+	};
+	const IS_COLLAPSED = checkSidebarIsHidden();
 	const message = function (key) {
 		return mw.message('collapsiblesidebar-' + key).plain();
 	};
@@ -140,12 +143,6 @@
 				switchMode.show();
 			}
 		}
-	};
-
-	const checkSidebarIsHidden = function () {
-		return document.documentElement.classList.contains(
-			'client-collapsedsidebar'
-		);
 	};
 
 	const modeSwitcher = function () {

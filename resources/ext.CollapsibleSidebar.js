@@ -20,9 +20,12 @@
 		"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 13.229 13.229'%3E%3Ccircle cx='6.615' cy='6.615' fill='%23fff' stroke='%2336c' stroke-width='1.322' r='5.953'/%3E%3Cpath d='M3.307 3.307v2.205h.735v-1.47h1.47v-.735zm.735 4.41h-.735v2.205h2.205v-.735h-1.47zm5.145 1.47h-1.47v.735h2.205V7.717h-.735zm0-5.88h-1.47v.735h1.47v1.47h.735V3.307z' fill='%2336c'/%3E%3C/svg%3E";
 	const SHOW_ICON =
 		"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 13.229 13.229'%3E%3Ccircle cx='6.615' cy='6.615' fill='%23fff' stroke='%2336c' stroke-width='1.322' r='5.953'/%3E%3Cpath d='M5.512 5.512V3.307h-.735v1.47h-1.47v.735zm-.735 4.41h.735V7.717H3.307v.735h1.47zm3.675-1.47h1.47v-.735H7.717v2.205h.735zm0-2.94h1.47v-.735h-1.47v-1.47h-.735v2.205z' fill='%2336c'/%3E%3C/svg%3E";
-	const IS_COLLAPSED = document.documentElement.classList.contains(
-		'client-collapsedsidebar'
-	);
+	const checkSidebarIsHidden = function () {
+		return document.documentElement.classList.contains(
+			'client-collapsedsidebar'
+		);
+	};
+	const IS_COLLAPSED = checkSidebarIsHidden();
 	const message = function (key) {
 		return mw.message('collapsiblesidebar-' + key).plain();
 	};
@@ -139,12 +142,6 @@
 				switchMode.show();
 			}
 		}
-	};
-
-	const checkSidebarIsHidden = function () {
-		return document.documentElement.classList.contains(
-			'client-collapsedsidebar'
-		);
 	};
 
 	const modeSwitcher = function () {
