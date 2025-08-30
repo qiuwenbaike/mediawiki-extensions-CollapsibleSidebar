@@ -26,6 +26,7 @@
 		"stylelint": "^16.23.1",
 		"stylelint-config-recess-order": "^7.2.0",
 		"stylelint-config-wikimedia": "^0.18.0",
-		"stylelint-order": "^7.0.0"
+		"stylelint-order": "^7.0.0",
+		"stylelint-plugin-use-baseline": "^0.8.3"
 	}
 }

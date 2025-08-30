@@ -1,9 +1,12 @@
 {
 	"plugins": [
-		"stylelint-order"
+		"stylelint-order",
+		"stylelint-plugin-use-baseline"
 	],
+	"reportNeedlessDisables": true,
 	"extends": [
-		"stylelint-config-wikimedia",
+		"stylelint-config-wikimedia/support-modern",
+		"stylelint-config-wikimedia/mediawiki",
 		"stylelint-config-recess-order"
 	],
 	"rules": {
