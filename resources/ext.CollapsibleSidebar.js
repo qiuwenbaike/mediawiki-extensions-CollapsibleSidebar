@@ -141,11 +141,20 @@
 		}
 	};
 
+	const checkSidebarIsHidden = function () {
+		return document.documentElement.classList.contains(
+			'client-collapsedsidebar'
+		);
+	};
+
 	const modeSwitcher = function () {
 		if (getCookie(COOKIE_NAME) === '') {
 			checkSidebar();
+			return;
 		}
-		if (getCookie(COOKIE_NAME) === '0') {
+
+		// Avoid Cookie reading bug
+		if (!checkSidebarIsHidden()) {
 			switchMode.hide();
 		} else {
 			switchMode.show();
