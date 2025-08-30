@@ -10,8 +10,8 @@
 		"stylelint:fix": "stylelint resources/*.less --fix --custom-syntax postcss-less",
 		"lint:js": "eslint resources/**/*.js",
 		"lint:fix:js": "eslint resources/**/*.js --fix",
-		"lint:styles": "stylelint resources/**/*.less --custom-syntax postcss-less",
-		"lint:fix:styles": "stylelint resources/**/*.less --fix --custom-syntax postcss-less"
+		"lint:styles": "stylelint resources/*.less --custom-syntax postcss-less",
+		"lint:fix:styles": "stylelint resources/*.less --fix --custom-syntax postcss-less"
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.3.1",
