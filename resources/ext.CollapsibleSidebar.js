@@ -48,7 +48,7 @@
 	button.addEventListener('mouseleave', eventTargetFunction);
 	bodyElement.appendChild(button);
 
-	const windowEventFunction = function windowEventFunction() {
+	const windowEventFunction = function () {
 		button.style.bottom =
 			document.getElementById('proveit') ||
 			document.getElementsByClassName('gadget-cat_a_lot-container')[ 0 ] ||

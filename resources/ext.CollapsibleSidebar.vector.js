@@ -148,7 +148,7 @@
 	const modeSwitcher = function () {
 		if (getCookie(COOKIE_NAME) === '') {
 			checkSidebar();
-			return;
+			modeSwitcher();
 		}
 
 		// Avoid Cookie reading bug
