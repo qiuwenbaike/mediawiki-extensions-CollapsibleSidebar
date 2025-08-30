@@ -25,17 +25,18 @@
 			'client-collapsedsidebar'
 		);
 	};
-	const IS_COLLAPSED = checkSidebarIsHidden();
 	const message = function (key) {
 		return mw.message('collapsiblesidebar-' + key).plain();
 	};
 
 	const button = document.createElement('img');
 	button.id = 'sidebarButton';
-	button.src = IS_COLLAPSED ? SHOW_ICON : HIDE_ICON;
+	button.src = checkSidebarIsHidden() ? SHOW_ICON : HIDE_ICON;
 	button.draggable = false;
-	button.alt = IS_COLLAPSED ? message('show-link') : message('hide-link');
-	button.title = IS_COLLAPSED ?
+	button.alt = checkSidebarIsHidden() ?
+		message('show-link') :
+		message('hide-link');
+	button.title = checkSidebarIsHidden() ?
 		message('show-link-tooltip') :
 		message('hide-link-tooltip');
 	button.style.opacity = '0.7';
@@ -136,7 +137,7 @@
 
 	const checkSidebar = function () {
 		if (getCookie(COOKIE_NAME) === '') {
-			if (IS_COLLAPSED) {
+			if (checkSidebarIsHidden()) {
 				switchMode.hide();
 			} else {
 				switchMode.show();
