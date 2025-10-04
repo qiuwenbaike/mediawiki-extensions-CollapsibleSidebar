@@ -39,8 +39,8 @@ importers:
         specifier: ^16.23.1
         version: 16.23.1(typescript@5.3.3)
       stylelint-config-recess-order:
-        specifier: ^7.2.0
-        version: 7.2.0(stylelint-order@7.0.0(stylelint@16.23.1(typescript@5.3.3)))(stylelint@16.23.1(typescript@5.3.3))
+        specifier: ^7.3.0
+        version: 7.3.0(stylelint-order@7.0.0(stylelint@16.23.1(typescript@5.3.3)))(stylelint@16.23.1(typescript@5.3.3))
       stylelint-config-wikimedia:
         specifier: ^0.18.0
         version: 0.18.0(postcss-less@6.0.0(postcss@8.5.3))(typescript@5.3.3)
@@ -1680,8 +1680,8 @@ packages:
   style-search@0.1.0:
     resolution: {integrity: sha512-Dj1Okke1C3uKKwQcetra4jSuk0DqbzbYtXipzFlFMZtowbF1x7BKJwB9AayVMyFARvU8EDrZdcax4At/452cAg==}
 
-  stylelint-config-recess-order@7.2.0:
-    resolution: {integrity: sha512-3Y97dhsWkUHFKRLGNLF6LE5JuNB2EVAZKYJ41wBRK4gplYdk7eHhSIwE24hanu0AoNmv5534Djip70pE+y5qkA==}
+  stylelint-config-recess-order@7.3.0:
+    resolution: {integrity: sha512-1LZhQi/D6OljSLRKejMEzbZA8h0AKkJH7p2y+eValc9ltWRGVznjnZsNLVCOwYpKk7GlYMLNVYTc9WpA0W3TYQ==}
     peerDependencies:
       stylelint: '>=16.18'
       stylelint-order: '>=7'
@@ -3634,7 +3634,7 @@ snapshots:
 
   style-search@0.1.0: {}
 
-  stylelint-config-recess-order@7.2.0(stylelint-order@7.0.0(stylelint@16.23.1(typescript@5.3.3)))(stylelint@16.23.1(typescript@5.3.3)):
+  stylelint-config-recess-order@7.3.0(stylelint-order@7.0.0(stylelint@16.23.1(typescript@5.3.3)))(stylelint@16.23.1(typescript@5.3.3)):
     dependencies:
       stylelint: 16.23.1(typescript@5.3.3)
       stylelint-order: 7.0.0(stylelint@16.23.1(typescript@5.3.3))
