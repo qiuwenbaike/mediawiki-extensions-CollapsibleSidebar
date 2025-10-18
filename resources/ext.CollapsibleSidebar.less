@@ -85,3 +85,17 @@
 		}
 	}
 }
+
+.skin-citizen {
+	// 1 - Special, 6 - File, 14 - Category
+	// stylelint-disable-next-line selector-class-pattern
+	&.ns {
+		&--1,
+		&-6,
+		&-14 {
+			#sidebarButton {
+				display: none !important;
+			}
+		}
+	}
+}
