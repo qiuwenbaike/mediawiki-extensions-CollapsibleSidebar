@@ -12,8 +12,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0(eslint@9.39.1)
       '@eslint/eslintrc':
-        specifier: ^3.3.1
-        version: 3.3.1
+        specifier: ^3.3.3
+        version: 3.3.3
       '@eslint/js':
         specifier: ^9.39.1
         version: 9.39.1
@@ -54,8 +54,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0(stylelint@16.26.1(typescript@5.3.3))
       stylelint-plugin-use-baseline:
-        specifier: ^1.1.1
-        version: 1.1.1(stylelint@16.26.1(typescript@5.3.3))
+        specifier: ^1.1.2
+        version: 1.1.2(stylelint@16.26.0(typescript@5.3.3))
 
 packages:
 
@@ -153,8 +153,8 @@ packages:
     resolution: {integrity: sha512-269Z39MS6wVJtsoUl10L60WdkhJVdPG24Q4eZTH3nnF6lpvSShEK3wQjDX9JRWAUPvPh7COouPpU9IrqaZFvtQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  '@eslint/eslintrc@3.3.1':
-    resolution: {integrity: sha512-gtF186CXhIl1p4pJNGZw8Yc6RlshoePRvE0X91oPGb3vZ8pM3qOS9W9NGPat9LziaBV7XrJWGylNQXkGcnM3IQ==}
+  '@eslint/eslintrc@3.3.3':
+    resolution: {integrity: sha512-Kr+LPIUVKz2qkx1HAMH8q1q6azbqBAsXJUxBl/ODDuVPX45Z9DfwB8tPjTi6nNZ8BuM3nbJxC5zCAg5elnBUTQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/js@8.57.1':
@@ -1716,8 +1716,8 @@ packages:
     peerDependencies:
       stylelint: ^16.18.0
 
-  stylelint-plugin-use-baseline@1.1.1:
-    resolution: {integrity: sha512-vlheyjEOBVSbM2pxbwFPDuGC6bOAps+iAgIpLgZeGZ+QDHAMp9G3N9k6LhynIXu6+5wKNN9fz72DtbShYRblgQ==}
+  stylelint-plugin-use-baseline@1.1.2:
+    resolution: {integrity: sha512-D0B3RoataL8Do8weuz2aFl1KBPNYP6CxyFXaH7Y/Nyb1Ybhc5Vq0tAWeJvu082yf3ek/8L5ubEM9by4tn2lhqg==}
     peerDependencies:
       stylelint: ^16.0.2
 
@@ -1992,7 +1992,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@eslint/eslintrc@3.3.1':
+  '@eslint/eslintrc@3.3.3':
     dependencies:
       ajv: 6.12.6
       debug: 4.4.3
@@ -2749,7 +2749,7 @@ snapshots:
       '@eslint/config-array': 0.21.1
       '@eslint/config-helpers': 0.4.2
       '@eslint/core': 0.17.0
-      '@eslint/eslintrc': 3.3.1
+      '@eslint/eslintrc': 3.3.3
       '@eslint/js': 9.39.1
       '@eslint/plugin-kit': 0.4.1
       '@humanfs/node': 0.16.7
@@ -2948,7 +2948,7 @@ snapshots:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.0.8
+      minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
 
@@ -3685,7 +3685,7 @@ snapshots:
       postcss-sorting: 9.1.0(postcss@8.5.6)
       stylelint: 16.26.1(typescript@5.3.3)
 
-  stylelint-plugin-use-baseline@1.1.1(stylelint@16.26.1(typescript@5.3.3)):
+  stylelint-plugin-use-baseline@1.1.2(stylelint@16.26.0(typescript@5.3.3)):
     dependencies:
       css-tree: 3.1.0
       is-plain-object: 5.0.0
