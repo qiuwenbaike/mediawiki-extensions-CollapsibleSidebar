@@ -57,9 +57,9 @@
 			document.querySelector('.gadget-cat_a_lot-container') ||
 			document.querySelector('#gadget-word_count-tip')
 		) {
-			buttonBottom = '253px';
+			buttonBottom = '213px';
 		} else {
-			buttonBottom = '211px';
+			buttonBottom = '169px';
 		}
 
 		reportButton.style.bottom = buttonBottom;
