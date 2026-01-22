@@ -7,7 +7,7 @@
 'use strict';
 (() => {
 	const wgCanonicalSpecialPageName = mw.config.get(
-		'wgCanonicalSpecialPageName'
+		'wgCanonicalSpecialPageName',
 	);
 	const skin = mw.config.get('skin');
 	if (wgCanonicalSpecialPageName === 'ApiHelp' || skin === 'vector-2022') {
@@ -22,7 +22,7 @@
 		"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 13.229 13.229'%3E%3Ccircle cx='6.615' cy='6.615' fill='%23fff' stroke='%2336c' stroke-width='1.322' r='5.953'/%3E%3Cpath d='M5.512 5.512V3.307h-.735v1.47h-1.47v.735zm-.735 4.41h.735V7.717H3.307v.735h1.47zm3.675-1.47h1.47v-.735H7.717v2.205h.735zm0-2.94h1.47v-.735h-1.47v-1.47h-.735v2.205z' fill='%2336c'/%3E%3C/svg%3E";
 	const checkSidebarIsHidden = function () {
 		return document.documentElement.classList.contains(
-			'client-collapsedsidebar'
+			'client-collapsedsidebar',
 		);
 	};
 	const message = function (key) {
@@ -33,12 +33,12 @@
 	button.id = 'sidebarButton';
 	button.src = checkSidebarIsHidden() ? SHOW_ICON : HIDE_ICON;
 	button.draggable = false;
-	button.alt = checkSidebarIsHidden() ?
-		message('show-link') :
-		message('hide-link');
-	button.title = checkSidebarIsHidden() ?
-		message('show-link-tooltip') :
-		message('hide-link-tooltip');
+	button.alt = checkSidebarIsHidden()
+		? message('show-link')
+		: message('hide-link');
+	button.title = checkSidebarIsHidden()
+		? message('show-link-tooltip')
+		: message('hide-link-tooltip');
 	button.style.opacity = '0.7';
 	button.style.bottom = '169px';
 	/* add EventListener to button */
@@ -49,16 +49,29 @@
 	button.addEventListener('mouseleave', eventTargetFunction);
 	bodyElement.appendChild(button);
 
-	const windowEventFunction = function () {
-		button.style.bottom =
-			document.getElementById('proveit') ||
-			document.getElementsByClassName('gadget-cat_a_lot-container')[ 0 ] ||
-			document.getElementById('gadget-word_count-tip') ?
-				'213px' :
-				'169px';
+	const scrollListener = () => {
+		let buttonBottom;
+
+		if (
+			document.querySelector('#proveit') ||
+			document.querySelector('.gadget-cat_a_lot-container') ||
+			document.querySelector('#gadget-word_count-tip')
+		) {
+			buttonBottom = '253px';
+		} else {
+			buttonBottom = '211px';
+		}
+
+		reportButton.style.bottom = buttonBottom;
 	};
-	window.addEventListener('scroll', windowEventFunction);
-	window.addEventListener('selectionchange', windowEventFunction);
+	const scrollListenerWithThrottle = mw.util.throttle(scrollListener, 200);
+	document.addEventListener('DOMContentLoaded', () => {
+		document.addEventListener('scroll', scrollListenerWithThrottle);
+		document.addEventListener(
+			'selectionchange',
+			scrollListenerWithThrottle,
+		);
+	});
 
 	const getCookie = function (name) {
 		return '; '
@@ -117,7 +130,7 @@
 		},
 		show: function () {
 			document.documentElement.classList.remove(
-				'client-collapsedsidebar'
+				'client-collapsedsidebar',
 			);
 			if (skin === 'write') {
 				document
@@ -132,7 +145,7 @@
 			button.src = HIDE_ICON;
 			button.alt = message('hide-link');
 			button.title = message('hide-link-tooltip');
-		}
+		},
 	};
 
 	const checkSidebar = function () {

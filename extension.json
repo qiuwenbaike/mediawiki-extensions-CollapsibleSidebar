@@ -36,6 +36,9 @@
 		},
 		"ext.CollapsibleSidebar.vector": {
 			"packageFiles": [ "ext.CollapsibleSidebar.vector.js" ],
+			"dependencies": [
+				"mediawiki.util"
+			],
 			"messages": [
 				"collapsiblesidebar-hide-link",
 				"collapsiblesidebar-hide-link-tooltip",
