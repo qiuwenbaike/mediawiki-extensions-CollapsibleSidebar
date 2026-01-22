@@ -3917,7 +3917,7 @@ snapshots:
       eslint-visitor-keys: 3.4.3
       espree: 9.6.1
       esquery: 1.7.0
-      lodash: 4.17.21
+      lodash: 4.17.23
       semver: 7.7.3
     transitivePeerDependencies:
       - supports-color
