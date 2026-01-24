@@ -4,7 +4,6 @@
  * @author 安忆 <i@anyi.in>, WaitSpring
  * @license GPL-3.0
  */
-'use strict';
 (() => {
 	const wgCanonicalSpecialPageName = mw.config.get(
 		'wgCanonicalSpecialPageName',
@@ -13,7 +12,6 @@
 	if (wgCanonicalSpecialPageName === 'ApiHelp' || skin === 'vector-2022') {
 		return;
 	}
-
 	const bodyElement = document.body || document.documentElement;
 	const COOKIE_NAME = 'usecollapsedsidebar';
 	const HIDE_ICON =
@@ -62,7 +60,7 @@
 			buttonBottom = '169px';
 		}
 
-		reportButton.style.bottom = buttonBottom;
+		button.style.bottom = buttonBottom;
 	};
 	const scrollListenerWithThrottle = mw.util.throttle(scrollListener, 200);
 	document.addEventListener('DOMContentLoaded', () => {
