@@ -5,10 +5,7 @@
  * @license GPL-3.0
  */
 (() => {
-	const wgCanonicalSpecialPageName = mw.config.get(
-		'wgCanonicalSpecialPageName',
-	);
-	const skin = mw.config.get('skin');
+	const {skin, wgCanonicalSpecialPageName} = mw.config.get();
 	if (wgCanonicalSpecialPageName === 'ApiHelp' || skin === 'vector-2022') {
 		return;
 	}
@@ -63,13 +60,11 @@
 		button.style.bottom = buttonBottom;
 	};
 	const scrollListenerWithThrottle = mw.util.throttle(scrollListener, 200);
-	document.addEventListener('DOMContentLoaded', () => {
-		document.addEventListener('scroll', scrollListenerWithThrottle);
-		document.addEventListener(
-			'selectionchange',
-			scrollListenerWithThrottle,
-		);
-	});
+	window.addEventListener('scroll', scrollListenerWithThrottle);
+	window.addEventListener(
+		'selectionchange',
+		scrollListenerWithThrottle,
+	);
 
 	const getCookie = function (name) {
 		return '; '
