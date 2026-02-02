@@ -27,8 +27,8 @@ importers:
         specifier: ^0.32.3
         version: 0.32.3(typescript@5.3.3)
       globals:
-        specifier: ^17.0.0
-        version: 17.1.0
+        specifier: ^17.3.0
+        version: 17.3.0
       grunt:
         specifier: 1.6.1
         version: 1.6.1
@@ -991,8 +991,8 @@ packages:
     resolution: {integrity: sha512-7ACyT3wmyp3I61S4fG682L0VA2RGD9otkqGJIwNUMF1SWUombIIk+af1unuDYgMm082aHYwD+mzJvv9Iu8dsgg==}
     engines: {node: '>=18'}
 
-  globals@17.1.0:
-    resolution: {integrity: sha512-8HoIcWI5fCvG5NADj4bDav+er9B9JMj2vyL2pI8D0eismKyUvPLTSs+Ln3wqhwcp306i73iyVnEKx3F6T47TGw==}
+  globals@17.3.0:
+    resolution: {integrity: sha512-yMqGUQVVCkD4tqjOJf3TnrvaaHDMYp4VlUSObbkIiuCPe/ofdMBFIAcBbCSRFWOnos6qRiTVStDwqPLUclaxIw==}
     engines: {node: '>=18'}
 
   globby@11.1.0:
@@ -3030,7 +3030,7 @@ snapshots:
 
   globals@15.15.0: {}
 
-  globals@17.1.0: {}
+  globals@17.3.0: {}
 
   globby@11.1.0:
     dependencies:
